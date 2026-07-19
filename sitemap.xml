@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://www.tutorservices.in/</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/index.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/about.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/services.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/courses.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/blog.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/contact.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/student-registration.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.tutorservices.in/tutor-registration.html</loc>
+       <lastmod>2026-07-19T12:20:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+</urlset>
