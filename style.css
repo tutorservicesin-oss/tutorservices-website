@@ -37,47 +37,7 @@ h2 { font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 800; }
 h3 { font-size: 1.1rem; font-weight: 700; }
 p { color: var(--muted); line-height: 1.75; }
 
-i[class*="fa-"] {
-  display: inline-grid;
-  place-items: center;
-  min-width: 1em;
-  font-family: Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1;
-}
-i[class*="fa-"]::before { content: "•"; }
-.fa-moon::before { content: "◐" !important; }
-.fa-phone::before, .fa-phone-volume::before { content: "☎" !important; }
-.fa-whatsapp::before { content: "W" !important; }
-.fa-arrow-up::before { content: "↑" !important; }
-.fa-arrow-right::before { content: "→" !important; }
-.fa-search::before { content: "⌕" !important; }
-.fa-location-dot::before { content: "⌖" !important; }
-.fa-envelope::before, .fa-envelope-open-text::before { content: "✉" !important; }
-.fa-calendar::before, .fa-calendar-check::before { content: "▣" !important; }
-.fa-clock::before { content: "◷" !important; }
-.fa-user::before, .fa-user-check::before, .fa-user-graduate::before { content: "♟" !important; }
-.fa-users::before { content: "♟♟" !important; font-size: .75em; }
-.fa-graduation-cap::before, .fa-school::before { content: "◆" !important; }
-.fa-book-open::before { content: "▤" !important; }
-.fa-computer::before, .fa-desktop::before, .fa-laptop::before, .fa-laptop-house::before { content: "▰" !important; }
-.fa-comments::before, .fa-message::before { content: "▱" !important; }
-.fa-code::before { content: "</>" !important; font-size: .7em; }
-.fa-calculator::before, .fa-square-root-variable::before { content: "∑" !important; }
-.fa-language::before { content: "A文" !important; font-size: .7em; }
-.fa-flask::before { content: "⚗" !important; }
-.fa-chart-line::before, .fa-chart-pie::before { content: "↗" !important; }
-.fa-shield-heart::before, .fa-award::before { content: "✓" !important; }
-.fa-palette::before { content: "✦" !important; }
-.fa-bullseye::before { content: "◎" !important; }
-.fa-headset::before { content: "◉" !important; }
-.fa-video::before { content: "▶" !important; }
-.fa-indian-rupee-sign::before { content: "₹" !important; }
-.fa-facebook-f::before { content: "f" !important; }
-.fa-instagram::before { content: "◎" !important; }
-.fa-linkedin-in::before { content: "in" !important; font-size: .65em; }
-.fa-youtube::before { content: "▶" !important; }
+
 
 .navbar {
   background: rgba(255, 255, 255, 0.88);
