@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+console.log("Legacy WebP image optimization is disabled. Use restore-standard-images.py instead.");
+process.exit(0);
+
 const root = __dirname;
 const excludedPages = new Set(["google4e98645dcf787467.html"]);
 const htmlFiles = fs.readdirSync(root)

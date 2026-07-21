@@ -101,8 +101,8 @@ function createBusiness(includeReviews = []) {
     logo: {
       '@type': 'ImageObject',
       '@id': `${siteUrl}/#logo`,
-      url: `${siteUrl}/assets/tutor-services-logo.webp`,
-      contentUrl: `${siteUrl}/assets/tutor-services-logo.webp`,
+      url: `${siteUrl}/assets/tutor-services-logo.png`,
+      contentUrl: `${siteUrl}/assets/tutor-services-logo.png`,
       caption: 'Tutorservices logo'
     },
     image: { '@id': `${siteUrl}/#logo` },
@@ -303,7 +303,7 @@ function createArticle(fileName, html, canonicalUrl, title, description, imageUr
     headline,
     name: title,
     description,
-    image: imageUrl ? [imageUrl] : [`${siteUrl}/assets/tutor-services-logo.webp`],
+    image: imageUrl ? [imageUrl] : [`${siteUrl}/assets/tutor-services-logo.png`],
     datePublished: config.datePublished,
     dateModified: contentReviewDate,
     inLanguage: 'en-IN',

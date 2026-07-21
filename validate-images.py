@@ -29,7 +29,7 @@ for page in sorted(ROOT.glob("*.html")):
 
     for image in parser.images:
         source = image.get("src", "")
-        file_path = ROOT / source
+        file_path = ROOT / source.lstrip("/")
         image_count += 1
 
         if not file_path.exists():

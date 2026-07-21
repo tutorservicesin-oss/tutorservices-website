@@ -120,7 +120,7 @@ i[class*="fa-"]::before { content: "•"; }
   background-color: var(--blue);
   background:
     linear-gradient(90deg, rgba(11,36,71,.94) 0%, rgba(11,36,71,.72) 48%, rgba(11,36,71,.22) 100%),
-    url("assets/hero-students-1600.webp") center/cover no-repeat;
+    url("/assets/hero-students-1600.jpg") center/cover no-repeat;
 }
 .hero-section .lead { color: rgba(255,255,255,.88); font-size: clamp(1.1rem, 2vw, 1.45rem); max-width: 760px; }
 .eyebrow, .section-kicker {
@@ -309,7 +309,7 @@ i[class*="fa-"]::before { content: "•"; }
   .hero-bg {
     background-image:
       linear-gradient(90deg, rgba(11,36,71,.95) 0%, rgba(11,36,71,.76) 62%, rgba(11,36,71,.42) 100%),
-      url("assets/hero-students-900.webp");
+      url("/assets/hero-students-900.jpg");
   }
 }
 
