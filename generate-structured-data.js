@@ -6,15 +6,27 @@ const siteUrl = 'https://www.tutorservices.in';
 const businessId = `${siteUrl}/#business`;
 const websiteId = `${siteUrl}/#website`;
 const editorialTeamId = `${siteUrl}/#editorial-team`;
+const founderId = `${siteUrl}/#founder`;
+const contentReviewDate = '2026-07-21T00:00:00+05:30';
+
+function toCleanPath(fileOrPath) {
+  if (fileOrPath === '/' || fileOrPath === 'index.html' || fileOrPath === '/index.html') return '/';
+  return `/${path.basename(fileOrPath, '.html').toLowerCase()}`;
+}
 
 const pageConfig = {
   'index.html': { pageType: 'WebPage', breadcrumbs: [] },
   'about.html': { pageType: 'AboutPage', breadcrumbs: [['Home', '/'], ['About', '/about.html']] },
   'services.html': { pageType: 'CollectionPage', breadcrumbs: [['Home', '/'], ['Services', '/services.html']] },
   'courses.html': { pageType: 'CollectionPage', breadcrumbs: [['Home', '/'], ['Courses', '/courses.html']] },
+  'home-tuition.html': { pageType: 'WebPage', breadcrumbs: [['Home', '/'], ['Home Tuition', '/home-tuition.html']], serviceType: 'Home Tuition' },
+  'online-tuition.html': { pageType: 'WebPage', breadcrumbs: [['Home', '/'], ['Online Tuition', '/online-tuition.html']], serviceType: 'Online Tuition' },
+  'classes.html': { pageType: 'CollectionPage', breadcrumbs: [['Home', '/'], ['Classes', '/classes.html']] },
+  'exam-preparation.html': { pageType: 'WebPage', breadcrumbs: [['Home', '/'], ['Exam Preparation', '/exam-preparation.html']], serviceType: 'Exam Preparation Tuition' },
   'student-registration.html': { pageType: 'WebPage', breadcrumbs: [['Home', '/'], ['Student Registration', '/student-registration.html']] },
   'tutor-registration.html': { pageType: 'WebPage', breadcrumbs: [['Home', '/'], ['Tutor Registration', '/tutor-registration.html']] },
   'contact.html': { pageType: 'ContactPage', breadcrumbs: [['Home', '/'], ['Contact', '/contact.html']] },
+  'locations.html': { pageType: 'CollectionPage', breadcrumbs: [['Home', '/'], ['Locations', '/locations.html']] },
   'blog.html': { pageType: 'CollectionPage', breadcrumbs: [['Home', '/'], ['Blog', '/blog.html']], isBlog: true },
   'best-home-tuition-services-india.html': {
     pageType: 'WebPage',
@@ -89,8 +101,8 @@ function createBusiness(includeReviews = []) {
     logo: {
       '@type': 'ImageObject',
       '@id': `${siteUrl}/#logo`,
-      url: `${siteUrl}/assets/tutor-services-logo.jpeg`,
-      contentUrl: `${siteUrl}/assets/tutor-services-logo.jpeg`,
+      url: `${siteUrl}/assets/tutor-services-logo.webp`,
+      contentUrl: `${siteUrl}/assets/tutor-services-logo.webp`,
       caption: 'Tutorservices logo'
     },
     image: { '@id': `${siteUrl}/#logo` },
@@ -98,6 +110,7 @@ function createBusiness(includeReviews = []) {
     description: 'Home tuition and online tutoring service connecting students and parents with tutors for academic subjects, board examinations and skill-based courses.',
     founder: {
       '@type': 'Person',
+      '@id': founderId,
       name: 'Meenakshi Sharma'
     },
     email: 'tutorservices.in@gmail.com',
@@ -139,6 +152,28 @@ function createBusiness(includeReviews = []) {
   return business;
 }
 
+function createFounder() {
+  return {
+    '@type': 'Person',
+    '@id': founderId,
+    name: 'Meenakshi Sharma',
+    jobTitle: 'Founder',
+    worksFor: { '@id': businessId },
+    url: `${siteUrl}/about`
+  };
+}
+
+function createEditorialTeam() {
+  return {
+    '@type': 'Organization',
+    '@id': editorialTeamId,
+    name: 'Tutorservices Editorial Team',
+    description: 'The Tutorservices team prepares education guidance from common parent and student enquiries and reviews it for service accuracy.',
+    url: `${siteUrl}/about`,
+    parentOrganization: { '@id': businessId }
+  };
+}
+
 function createWebsite() {
   return {
     '@type': 'WebSite',
@@ -162,7 +197,7 @@ function createBreadcrumb(config, canonicalUrl) {
       '@type': 'ListItem',
       position: index + 1,
       name,
-      item: `${siteUrl}${urlPath}`
+      item: `${siteUrl}${toCleanPath(urlPath)}`
     }))
   };
 }
@@ -197,6 +232,29 @@ function extractArticleFaqs(html) {
     });
   }
   return faqs;
+}
+
+function extractGeneratedFaqs(html) {
+  const section = html.match(/<section\s+class="ai-faq"[\s\S]*?<\/section>/i)?.[0];
+  if (!section) return [];
+
+  const faqs = [];
+  const pattern = /<article>\s*<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>\s*<\/article>/gi;
+  let match;
+  while ((match = pattern.exec(section))) {
+    faqs.push({ question: cleanText(match[1]), answer: cleanText(match[2]) });
+  }
+  return faqs;
+}
+
+function deduplicateFaqs(faqs) {
+  const seen = new Set();
+  return faqs.filter((faq) => {
+    const key = faq.question.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function createFaqSchema(faqs, canonicalUrl) {
@@ -239,21 +297,20 @@ function extractReviews(html) {
 
 function createArticle(fileName, html, canonicalUrl, title, description, imageUrl, config) {
   const headline = extractRequired(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i, 'H1', fileName);
-  const modifiedDate = fs.statSync(path.join(projectRoot, fileName)).mtime.toISOString().slice(0, 10);
   return {
     '@type': 'Article',
     '@id': `${canonicalUrl}#article`,
     headline,
     name: title,
     description,
-    image: imageUrl ? [imageUrl] : [`${siteUrl}/assets/tutor-services-logo.jpeg`],
+    image: imageUrl ? [imageUrl] : [`${siteUrl}/assets/tutor-services-logo.webp`],
     datePublished: config.datePublished,
-    dateModified: `${modifiedDate}T00:00:00+05:30`,
+    dateModified: contentReviewDate,
     inLanguage: 'en-IN',
     author: { '@id': editorialTeamId },
     publisher: { '@id': businessId },
     mainEntityOfPage: { '@id': `${canonicalUrl}#webpage` },
-    isPartOf: { '@id': `${siteUrl}/blog.html#blog` }
+    isPartOf: { '@id': `${siteUrl}/blog#blog` }
   };
 }
 
@@ -264,9 +321,12 @@ function createSchemaGraph(fileName, html, config) {
   const imageUrl = extractMetaContent(html, 'og:image', 'property');
   const reviews = fileName === 'index.html' ? extractReviews(html) : [];
   const breadcrumb = createBreadcrumb(config, canonicalUrl);
-  const faqs = fileName === 'index.html' ? extractHomepageFaqs(html) : extractArticleFaqs(html);
+  const faqs = deduplicateFaqs([
+    ...(fileName === 'index.html' ? extractHomepageFaqs(html) : extractArticleFaqs(html)),
+    ...extractGeneratedFaqs(html)
+  ]);
   const faqSchema = createFaqSchema(faqs, canonicalUrl);
-  const graph = [createBusiness(reviews), createWebsite()];
+  const graph = [createBusiness(reviews), createWebsite(), createFounder()];
 
   const page = {
     '@type': config.pageType,
@@ -303,7 +363,7 @@ function createSchemaGraph(fileName, html, config) {
       isPartOf: { '@id': websiteId },
       publisher: { '@id': businessId },
       blogPost: articleFiles.map((articleFile) => ({
-        '@id': `${siteUrl}/${articleFile}#article`
+        '@id': `${siteUrl}${toCleanPath(articleFile)}#article`
       }))
     };
     page.mainEntity = { '@id': blog['@id'] };
@@ -311,22 +371,18 @@ function createSchemaGraph(fileName, html, config) {
   }
 
   if (config.isArticle) {
-    graph.push({
-      '@type': 'Organization',
-      '@id': editorialTeamId,
-      name: 'Tutorservices Editorial Team',
-      url: `${siteUrl}/about.html`
-    });
+    graph.push(createEditorialTeam());
     graph.push(createArticle(fileName, html, canonicalUrl, title, description, imageUrl, config));
   }
 
-  if (fileName === 'services.html') {
+  if (fileName === 'services.html' || config.serviceType) {
+    const serviceTypes = config.serviceType || ['Home Tuition', 'Online Tuition', 'Offline Tuition', 'Academic Coaching', 'Spoken English', 'Computer Courses'];
     const service = {
       '@type': 'Service',
       '@id': `${canonicalUrl}#service`,
-      name: 'Tutorservices Tuition and Learning Services',
+      name: config.serviceType ? `Tutorservices ${config.serviceType}` : 'Tutorservices Tuition and Learning Services',
       description,
-      serviceType: ['Home Tuition', 'Online Tuition', 'Offline Tuition', 'Academic Coaching', 'Spoken English', 'Computer Courses'],
+      serviceType: serviceTypes,
       provider: { '@id': businessId },
       areaServed: { '@type': 'Country', name: 'India' }
     };

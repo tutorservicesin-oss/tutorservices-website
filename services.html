@@ -1,40 +1,351 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ"></script>
+  <!-- Deferred Google Analytics: loads after interaction or once the page is settled -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KNFJRWMJHZ');
+    function gtag(){ dataLayer.push(arguments); }
+    function loadTutorservicesAnalytics(){
+      if (window.tutorservicesAnalyticsLoaded) return;
+      window.tutorservicesAnalyticsLoaded = true;
+      const tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ";
+      document.head.appendChild(tag);
+      gtag("js", new Date());
+      gtag("config", "G-KNFJRWMJHZ");
+    }
+    ["pointerdown", "keydown"].forEach((eventName) =>
+      window.addEventListener(eventName, loadTutorservicesAnalytics, { once: true, passive: true })
+    );
+    window.addEventListener("load", () => window.setTimeout(loadTutorservicesAnalytics, 10000), { once: true });
   </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Home Tuition, Online Tuition and Coaching in India</title>
   <meta name="description" content="Explore tutorservices services including home tuition, online tuition, offline coaching, one-to-one classes, group classes, hobby classes, spoken English and computer courses.">
   <meta name="keywords" content="home tuition, online tuition, offline coaching, spoken English, computer courses, group classes India">
-  <meta property="og:title" content="tutorservices Services"><meta property="og:description" content="Premium tutoring and skill-learning services across India."><meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/tutor-services-logo.jpeg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Tuition Bureau","provider":{"@type":"EducationalOrganization","name":"tutorservices"},"areaServed":"India"}</script>
+  <link rel="canonical" href="https://www.tutorservices.in/services">
+  <meta property="og:title" content="tutorservices Services">
+  <meta property="og:description" content="Premium tutoring and skill-learning services across India.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tutorservices.in/services">
+  <meta property="og:site_name" content="tutorservices">
+  <meta property="og:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta property="og:image:alt" content="tutorservices logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Home Tuition, Online Tuition and Coaching Services">
+  <meta name="twitter:description" content="Explore home tuition, online tuition, coaching, spoken English and computer courses across India.">
+  <meta name="twitter:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta name="twitter:image:alt" content="tutorservices logo">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="layout.min.css">
+  <link rel="stylesheet" href="style.min.css"><link rel="icon" type="image/png" href="assets/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "LocalBusiness",
+          "EducationalOrganization"
+        ],
+        "@id": "https://www.tutorservices.in/#business",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "url": "https://www.tutorservices.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.tutorservices.in/#logo",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "contentUrl": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "caption": "Tutorservices logo"
+        },
+        "image": {
+          "@id": "https://www.tutorservices.in/#logo"
+        },
+        "slogan": "Learn Smarter, Achieve Faster",
+        "description": "Home tuition and online tutoring service connecting students and parents with tutors for academic subjects, board examinations and skill-based courses.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.tutorservices.in/#founder",
+          "name": "Meenakshi Sharma"
+        },
+        "email": "tutorservices.in@gmail.com",
+        "telephone": "+91-7011090796",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "City",
+            "name": "New Delhi"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+91-7011090796",
+          "email": "tutorservices.in@gmail.com",
+          "areaServed": "IN",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        "knowsAbout": [
+          "Home Tuition",
+          "Online Tuition",
+          "CBSE Tuition",
+          "ICSE Tuition",
+          "State Board Tuition",
+          "Spoken English",
+          "Computer Courses",
+          "Competitive Exam Preparation"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.tutorservices.in/#website",
+        "url": "https://www.tutorservices.in/",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "description": "Home tuition, online tuition and educational services for students across India.",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://www.tutorservices.in/#business"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.tutorservices.in/#founder",
+        "name": "Meenakshi Sharma",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "url": "https://www.tutorservices.in/about"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.tutorservices.in/services#webpage",
+        "url": "https://www.tutorservices.in/services",
+        "name": "Services | Home Tuition, Online Tuition and Coaching in India",
+        "description": "Explore tutorservices services including home tuition, online tuition, offline coaching, one-to-one classes, group classes, hobby classes, spoken English and computer courses.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/#website"
+        },
+        "about": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp"
+        },
+        "breadcrumb": {
+          "@id": "https://www.tutorservices.in/services#breadcrumb"
+        },
+        "hasPart": [
+          {
+            "@id": "https://www.tutorservices.in/services#faq"
+          }
+        ],
+        "mainEntity": {
+          "@id": "https://www.tutorservices.in/services#service"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.tutorservices.in/services#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tutorservices.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.tutorservices.in/services"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.tutorservices.in/services#service",
+        "name": "Tutorservices Tuition and Learning Services",
+        "description": "Explore tutorservices services including home tuition, online tuition, offline coaching, one-to-one classes, group classes, hobby classes, spoken English and computer courses.",
+        "serviceType": [
+          "Home Tuition",
+          "Online Tuition",
+          "Offline Tuition",
+          "Academic Coaching",
+          "Spoken English",
+          "Computer Courses"
+        ],
+        "provider": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.tutorservices.in/services#faq",
+        "url": "https://www.tutorservices.in/services#faq",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/services#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which classes and boards are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tutor enquiries are accepted for Class 1 to 12 students studying under CBSE, ICSE and State Board syllabi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a student request only one subject?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Families can request a tutor for one subject, several subjects or a specific exam-preparation need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are both online and offline services available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Availability depends on the subject, tutor, city and preferred schedule stated in the enquiry."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div id="loader" class="loader"><span>tutorservices</span></div>
-  <nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="index.html"><img src="assets/tutor-services-logo.jpeg" alt="tutorservices logo"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li><li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li><li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-3" href="student-registration.html">Book Demo</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
+<nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="/"><img src="assets/tutor-services-logo.webp" alt="Tutorservices home tuition and online tutoring logo" decoding="async" loading="eager" fetchpriority="high" width="128" height="128"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link active" href="/services">Services</a></li><li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li><li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li><li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li><li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-3" href="/student-registration">Book Demo</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
   <main>
     <section class="page-hero"><div class="container"><span class="section-kicker">Services</span><h1>Complete tuition and skill-learning solutions.</h1><p>Choose expert-led online, offline, one-to-one and group learning across India.</p></div></section>
     <section class="section-padding"><div class="container"><div class="row g-4">
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-house-user"></i><h2>Home Tuition</h2><p>Personalized doorstep learning for school subjects, board exams and concept clarity.</p><a href="student-registration.html">Book home tutor</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-video"></i><h2>Online Tuition</h2><p>Live digital classes with flexible scheduling, screen sharing and personal attention.</p><a href="student-registration.html">Start online class</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-school"></i><h2>Offline Tuition</h2><p>Structured local coaching and small batches for steady academic performance.</p><a href="student-registration.html">Find offline class</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-user-graduate"></i><h2>One-to-One Classes</h2><p>Dedicated tutor attention for faster doubt solving and personalized pace.</p><a href="student-registration.html">Book demo</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-users"></i><h2>Group Classes</h2><p>Affordable, collaborative learning for students who enjoy peer motivation.</p><a href="student-registration.html">Join group</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-palette"></i><h2>Hobby Classes</h2><p>Creative skill development through art, music, dance and special interest classes.</p><a href="contact.html">Ask details</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-comments"></i><h2>Spoken English</h2><p>Grammar, pronunciation, vocabulary and confidence for everyday communication.</p><a href="student-registration.html">Improve English</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-computer"></i><h2>Computer Courses</h2><p>Digital literacy, school computer science, office tools and coding foundations.</p><a href="courses.html">View courses</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-award"></i><h2>Competitive Exam Prep</h2><p>Focused preparation support for entrance and competitive exams.</p><a href="student-registration.html">Get exam tutor</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-house-user"></i><h2>Home Tuition</h2><p>Personalized doorstep learning for school subjects, board exams and concept clarity.</p><a href="/student-registration">Book home tutor</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-video"></i><h2>Online Tuition</h2><p>Live digital classes with flexible scheduling, screen sharing and personal attention.</p><a href="/student-registration">Start online class</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-school"></i><h2>Offline Tuition</h2><p>Structured local coaching and small batches for steady academic performance.</p><a href="/student-registration">Find offline class</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-user-graduate"></i><h2>One-to-One Classes</h2><p>Dedicated tutor attention for faster doubt solving and personalized pace.</p><a href="/student-registration">Book demo</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-users"></i><h2>Group Classes</h2><p>Affordable, collaborative learning for students who enjoy peer motivation.</p><a href="/student-registration">Join group</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-palette"></i><h2>Hobby Classes</h2><p>Creative skill development through art, music, dance and special interest classes.</p><a href="/contact">Ask details</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-comments"></i><h2>Spoken English</h2><p>Grammar, pronunciation, vocabulary and confidence for everyday communication.</p><a href="/student-registration">Improve English</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-computer"></i><h2>Computer Courses</h2><p>Digital literacy, school computer science, office tools and coding foundations.</p><a href="/courses">View courses</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-award"></i><h2>Competitive Exam Prep</h2><p>Focused preparation support for entrance and competitive exams.</p><a href="/student-registration">Get exam tutor</a></article></div>
     </div></div></section>
+    <!-- Tutor expertise profiles -->
+    <section class="tutor-profiles section-padding" aria-labelledby="tutor-profiles-title"><div class="container"><div class="section-title"><span class="section-kicker">Expertise Indicators</span><h2 id="tutor-profiles-title">Tutor capability profiles used during matching</h2><p>Profiles are assessed against the learner’s class, board, subject, goals, mode and location. Specific tutor names, qualifications and availability are shared only for relevant enquiries.</p></div><div class="tutor-profile-grid"><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Academic foundations profile</h3><p>Primary and middle-school learning support</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Class-range experience</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Board familiarity</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Core subject strength</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Home or online availability</li></ul></article><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Board and senior-secondary profile</h3><p>Focused support for Classes 9 to 12</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Subject specialisation</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Board-question familiarity</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Written-answer guidance</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Exam-planning approach</li></ul></article><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Language and skills profile</h3><p>Spoken English, computers and coding support</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Practical demonstration</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Learner-level fit</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Relevant course experience</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Digital teaching ability</li></ul></article></div><div class="profile-disclosure"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><p><strong>Transparent matching:</strong> These are capability categories, not fictional individual tutor endorsements. Families should review the proposed tutor’s actual qualifications, experience and demo-class fit before confirming tuition.</p></div></div></section>
+    <!-- /Tutor expertise profiles -->
+    <!-- Business trust signals -->
+    <section class="business-trust" aria-labelledby="business-trust-title">
+      <div class="container">
+        <h2 id="business-trust-title" class="visually-hidden">Tutorservices business information</h2>
+        <div class="business-trust-grid">
+          <div><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span><strong>Founder-led service</strong>Meenakshi Sharma</span></div>
+          <a href="tel:+917011090796"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Call for enquiries</strong>+91 7011090796</span></a>
+          <a href="mailto:tutorservices.in@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email support</strong>tutorservices.in@gmail.com</span></a>
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Service area</strong>New Delhi and online across India</span></div>
+        </div>
+        <p class="business-trust-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tutor qualifications, subject fit, teaching mode and availability are reviewed for each relevant enquiry before regular classes are confirmed.</p>
+      </div>
+    </section>
+    <!-- /Business trust signals -->
+    <!-- Cluster architecture -->
+<section class="cluster-architecture section-padding" aria-labelledby="cluster-overview-title"><div class="container"><div class="section-title"><span class="section-kicker">Learning Directory</span><h2 id="cluster-overview-title">Explore tuition by learning need</h2><p>Start with a learning mode, subject, class, exam or service area, then follow the most relevant guidance.</p></div><div class="cluster-overview-grid"><a class="cluster-card" href="/home-tuition"><strong>Home Tuition</strong><span>Personal tutor matching, benefits, selection guidance and local availability.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a><a class="cluster-card" href="/courses"><strong>Subjects</strong><span>Academic subjects, languages, commerce, computer science and coding support.</span></a><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/locations"><strong>Cities</strong><span>Home-tuition service areas in Delhi and online tuition availability across India.</span></a></div></div></section>
+<!-- /Cluster architecture -->
+    <!-- AI-ready answer guide -->
+    <section class="ai-answer-section section-padding" aria-labelledby="answer-guide-services">
+      <div class="container">
+        <div class="ai-summary-box">
+          <span class="section-kicker">Quick Answer</span>
+          <h2 id="answer-guide-services">What is tuition service?</h2>
+          <p><strong>Definition:</strong> A tuition service provides additional teaching support outside regular school through home, online, offline, individual or group classes.</p>
+          <p class="ai-summary-line"><strong>In summary:</strong> Tutorservices covers Class 1 to 12 academics, competitive-exam preparation, spoken English, computer courses and selected hobby classes.</p>
+        </div>
+
+        <div class="ai-guide-grid">
+          <section aria-labelledby="answer-guide-services-takeaways">
+            <h2 id="answer-guide-services-takeaways">Key takeaways</h2>
+            <ul class="ai-takeaways"><li>Students can choose personal or group learning.</li><li>Home and online formats support different schedules.</li><li>Requirements can be subject-specific or cover several subjects.</li></ul>
+          </section>
+          <section aria-labelledby="answer-guide-services-steps">
+            <h2 id="answer-guide-services-steps">Step-by-step guide</h2>
+            <ol class="ai-steps"><li>Identify the student’s class, board and weak subjects.</li><li>Choose home, online, offline or group tuition.</li><li>Share the city, timing and learning goals.</li><li>Attend a demo and confirm the most suitable plan.</li></ol>
+          </section>
+        </div>
+
+        <section class="ai-comparison" aria-labelledby="answer-guide-services-comparison">
+          <h2 id="answer-guide-services-comparison">Compare Tutorservices learning options</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Main point</th></tr></thead>
+              <tbody><tr><th scope="row">One-to-one classes</th><td>Focused help and doubt solving</td><td>One student</td></tr><tr><th scope="row">Group classes</th><td>Discussion and shared practice</td><td>Small learner group</td></tr><tr><th scope="row">Skill classes</th><td>English, computers or hobbies</td><td>Goal-based learners</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section class="ai-faq" aria-labelledby="answer-guide-services-faq">
+          <h2 id="answer-guide-services-faq">Frequently asked questions</h2>
+          <div class="ai-faq-grid">
+            <article><h3>Which classes and boards are supported?</h3><p>Tutor enquiries are accepted for Class 1 to 12 students studying under CBSE, ICSE and State Board syllabi.</p></article>
+            <article><h3>Can a student request only one subject?</h3><p>Yes. Families can request a tutor for one subject, several subjects or a specific exam-preparation need.</p></article>
+            <article><h3>Are both online and offline services available?</h3><p>Yes. Availability depends on the subject, tutor, city and preferred schedule stated in the enquiry.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- /AI-ready answer guide -->
+<!-- Topic cluster links -->
+    <section class="topic-cluster-section" aria-labelledby="topic-cluster-services">
+      <div class="container">
+        <div class="topic-cluster-heading">
+          <span class="section-kicker">Explore Related</span>
+          <h2 id="topic-cluster-services">Explore services by learning need</h2>
+          <p>Compare subjects, local availability and helpful guides before submitting an enquiry.</p>
+        </div>
+        <div class="topic-cluster-links">
+          <a class="topic-cluster-link" href="/courses">
+            <span>Browse subjects and courses</span>
+            <small>Find academic, language, commerce and technology options.</small>
+          </a>
+          <a class="topic-cluster-link" href="/locations">
+            <span>Check tutor availability by area</span>
+            <small>Review Delhi service areas and online access across India.</small>
+          </a>
+          <a class="topic-cluster-link" href="/benefits-of-home-tuition">
+            <span>When personal tuition can help</span>
+            <small>Learn how individual support may improve confidence and understanding.</small>
+          </a>
+          <a class="topic-cluster-link" href="/online-learning-tips">
+            <span>Make online lessons more effective</span>
+            <small>Use simple preparation and revision habits for better classes.</small>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Topic cluster links -->
   </main>
-  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Home, online and offline tuition across India.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Home, online and offline tuition across India.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><script src="script.min.js"></script>
 </body>
 </html>

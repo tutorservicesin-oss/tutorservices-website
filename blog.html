@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ"></script>
+  <!-- Deferred Google Analytics: loads after interaction or once the page is settled -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KNFJRWMJHZ');
+    function gtag(){ dataLayer.push(arguments); }
+    function loadTutorservicesAnalytics(){
+      if (window.tutorservicesAnalyticsLoaded) return;
+      window.tutorservicesAnalyticsLoaded = true;
+      const tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ";
+      document.head.appendChild(tag);
+      gtag("js", new Date());
+      gtag("config", "G-KNFJRWMJHZ");
+    }
+    ["pointerdown", "keydown"].forEach((eventName) =>
+      window.addEventListener(eventName, loadTutorservicesAnalytics, { once: true, passive: true })
+    );
+    window.addEventListener("load", () => window.setTimeout(loadTutorservicesAnalytics, 10000), { once: true });
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,55 +27,247 @@
   <meta name="keywords" content="home tuition blog India, online tuition tips, best home tutor, CBSE tuition, ICSE tuition, board exam preparation, spoken English classes, coding for kids India, tutor registration India">
   <meta name="author" content="tutorservices">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.tutorservices.in/blog">
   <meta property="og:title" content="tutorservices Education Blog">
   <meta property="og:description" content="Helpful tuition guides for students, parents and tutors across India.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://www.tutorservices.in/blog">
+  <meta property="og:site_name" content="tutorservices">
+  <meta property="og:image" content="https://www.tutorservices.in/assets/images/home-tuition-study-guide.webp">
+  <meta property="og:image:alt" content="Books and learning materials for students">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="tutorservices Education Blog">
+  <meta name="twitter:description" content="Helpful tuition and study guides for students, parents and tutors across India.">
+  <meta name="twitter:image" content="https://www.tutorservices.in/assets/images/home-tuition-study-guide.webp">
+  <meta name="twitter:image:alt" content="Books and learning materials for students">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/tutor-services-logo.jpeg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="layout.min.css">
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "tutorservices Blog",
-      "url": "https://tutorservices.in/blog.html",
-      "description": "Education guides for home tuition, online learning, board exams, spoken English, computer courses and tutor registration in India.",
-      "blogPost": [
-        {"@type": "BlogPosting", "headline": "Benefits of Home Tuition for Students in India", "keywords": "home tuition India, personal tutor, one-to-one classes"},
-        {"@type": "BlogPosting", "headline": "How to Choose the Best Home Tutor Near You", "keywords": "best home tutor near me, verified tutor, parent checklist"},
-        {"@type": "BlogPosting", "headline": "Online Tuition Tips for Better Focus and Results", "keywords": "online tuition India, online classes, learning tips"},
-        {"@type": "BlogPosting", "headline": "CBSE, ICSE and State Board Tuition Guide", "keywords": "CBSE tuition, ICSE tuition, state board tuition"},
-        {"@type": "BlogPosting", "headline": "Class 10 Board Exam Preparation Plan", "keywords": "Class 10 board exam preparation, study timetable, revision plan"},
-        {"@type": "BlogPosting", "headline": "Class 12 Commerce and Accounts Tuition Guide", "keywords": "Class 12 commerce tuition, accounts tutor, business studies"},
-        {"@type": "BlogPosting", "headline": "Best Study Techniques for School Students", "keywords": "study techniques, active recall, spaced revision"},
-        {"@type": "BlogPosting", "headline": "Spoken English Guide for Students and Adults", "keywords": "spoken English classes, English fluency, communication skills"},
-        {"@type": "BlogPosting", "headline": "Coding for Kids: Why Early Computer Learning Matters", "keywords": "coding for kids India, computer classes, programming basics"},
-        {"@type": "BlogPosting", "headline": "Tutor Registration Guide for Teaching Jobs", "keywords": "tutor registration India, home tutor jobs, online tutor jobs"}
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "LocalBusiness",
+          "EducationalOrganization"
+        ],
+        "@id": "https://www.tutorservices.in/#business",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "url": "https://www.tutorservices.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.tutorservices.in/#logo",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "contentUrl": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "caption": "Tutorservices logo"
+        },
+        "image": {
+          "@id": "https://www.tutorservices.in/#logo"
+        },
+        "slogan": "Learn Smarter, Achieve Faster",
+        "description": "Home tuition and online tutoring service connecting students and parents with tutors for academic subjects, board examinations and skill-based courses.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.tutorservices.in/#founder",
+          "name": "Meenakshi Sharma"
+        },
+        "email": "tutorservices.in@gmail.com",
+        "telephone": "+91-7011090796",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "City",
+            "name": "New Delhi"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+91-7011090796",
+          "email": "tutorservices.in@gmail.com",
+          "areaServed": "IN",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        "knowsAbout": [
+          "Home Tuition",
+          "Online Tuition",
+          "CBSE Tuition",
+          "ICSE Tuition",
+          "State Board Tuition",
+          "Spoken English",
+          "Computer Courses",
+          "Competitive Exam Preparation"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.tutorservices.in/#website",
+        "url": "https://www.tutorservices.in/",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "description": "Home tuition, online tuition and educational services for students across India.",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://www.tutorservices.in/#business"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.tutorservices.in/#founder",
+        "name": "Meenakshi Sharma",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "url": "https://www.tutorservices.in/about"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.tutorservices.in/blog#webpage",
+        "url": "https://www.tutorservices.in/blog",
+        "name": "tutorservices Blog | Home Tuition, Online Classes & Study Tips India",
+        "description": "Read SEO-friendly education blogs by tutorservices on home tuition in India, online classes, board exam preparation, study techniques, spoken English, coding and tutor registration.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/#website"
+        },
+        "about": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.tutorservices.in/assets/images/home-tuition-study-guide.webp"
+        },
+        "breadcrumb": {
+          "@id": "https://www.tutorservices.in/blog#breadcrumb"
+        },
+        "hasPart": [
+          {
+            "@id": "https://www.tutorservices.in/blog#faq"
+          }
+        ],
+        "mainEntity": {
+          "@id": "https://www.tutorservices.in/blog#blog"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.tutorservices.in/blog#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tutorservices.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.tutorservices.in/blog"
+          }
+        ]
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://www.tutorservices.in/blog#blog",
+        "url": "https://www.tutorservices.in/blog",
+        "name": "tutorservices Blog | Home Tuition, Online Classes & Study Tips India",
+        "description": "Read SEO-friendly education blogs by tutorservices on home tuition in India, online classes, board exam preparation, study techniques, spoken English, coding and tutor registration.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/#website"
+        },
+        "publisher": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "blogPost": [
+          {
+            "@id": "https://www.tutorservices.in/best-home-tuition-services-india#article"
+          },
+          {
+            "@id": "https://www.tutorservices.in/benefits-of-home-tuition#article"
+          },
+          {
+            "@id": "https://www.tutorservices.in/online-learning-tips#article"
+          },
+          {
+            "@id": "https://www.tutorservices.in/class-10-board-exam-preparation#article"
+          },
+          {
+            "@id": "https://www.tutorservices.in/spoken-english-guide#article"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.tutorservices.in/blog#faq",
+        "url": "https://www.tutorservices.in/blog#faq",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/blog#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who are the blog articles written for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The articles are written for parents, school students, tutors and learners seeking practical academic or skill guidance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the articles a replacement for a tutor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Articles provide general educational guidance; individual learning difficulties may require personalised teaching support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can readers find related services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each article includes contextual links to relevant services, courses, locations or enquiry pages."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 <body>
-  <div id="loader" class="loader"><span>tutorservices</span></div>
-
-  <nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="assets/tutor-services-logo.jpeg" alt="tutorservices logo"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a>
+      <a class="navbar-brand" href="/"><img src="assets/tutor-services-logo.webp" alt="Tutorservices home tuition and online tutoring logo" decoding="async" loading="eager" fetchpriority="high" width="128" height="128"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
           <li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
         </ul>
       </div>
@@ -94,10 +297,10 @@
             <h2>Best Home Tuition Services in India</h2>
             <p>Our complete guide explains how home tuition works, the difference between home and online classes, subject and board options, and the most important points parents should check before choosing a tutor.</p>
             <p>It also includes practical study tips and answers to common questions about finding tutors for Nursery through Class 12.</p>
-            <a class="btn btn-primary-custom" href="best-home-tuition-services-india.html">Read Complete Guide</a>
+            <a class="btn btn-primary-custom" href="/best-home-tuition-services-india">Read Complete Guide</a>
           </div>
           <div class="col-lg-6" data-aos="fade-left">
-            <img class="rounded-4 shadow w-100" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Parent and student discussing study plan with a tutor">
+            <img class="rounded-4 shadow w-100" src="assets/images/parent-student-tutor-study-plan.webp" alt="Parent and student discussing a personalised study plan with a tutor" loading="lazy" decoding="async" width="900" height="600">
           </div>
         </div>
       </div>
@@ -114,100 +317,100 @@
         <div class="row g-4 blog-list">
           <div class="col-md-6 col-lg-4 blog-item" data-title="benefits of home tuition personal tutor one to one classes India">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80" alt="Student learning at home with books and a private tutor">
+              <img src="assets/images/student-reading-home-tuition.webp" alt="Student reading and revising lessons during home tuition" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Home Tuition</span>
                 <h2>Benefits of Home Tuition for Students</h2>
                 <p>Home tuition gives students personal attention, flexible pacing, doubt clearing and a comfortable environment for steady academic improvement.</p>
-                <a href="benefits-of-home-tuition.html">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="/benefits-of-home-tuition">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="online learning tips online tuition India focus routine">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=700&q=80" alt="Student attending online tuition on laptop">
+              <img src="assets/images/student-attending-online-tuition.webp" alt="Student learning from an online tutor using a laptop at home" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Online Tuition</span>
                 <h2>Online Learning Tips for Better Results</h2>
                 <p>Students learn better online with a fixed study routine, headphones, prepared questions, regular revision and parent feedback after each class.</p>
-                <a href="online-learning-tips.html">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="/online-learning-tips">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="CBSE ICSE state board tuition class 1 to 12">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80" alt="School students studying for CBSE ICSE and State Board exams">
+              <img src="assets/images/school-board-exam-students.webp" alt="School students preparing for CBSE, ICSE and State Board examinations" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Boards</span>
                 <h2>CBSE, ICSE and State Board Tuition Guide</h2>
                 <p>Board-focused tuition helps students follow the right syllabus, practice exam-style questions and revise chapters according to school requirements.</p>
-                <a href="courses.html">View academic courses</a>
+                <a href="/courses">View academic courses</a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="class 10 board exam preparation timetable revision plan">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=700&q=80" alt="Student preparing timetable for Class 10 board exams">
+              <img src="assets/images/class-10-board-exam-study-plan.webp" alt="Student creating a revision timetable for Class 10 board examinations" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Board Exams</span>
                 <h2>Class 10 Board Exam Preparation Plan</h2>
                 <p>A strong Class 10 plan includes chapter-wise targets, weekly tests, formula revision, writing practice and repeated review of weak topics.</p>
-                <a href="class-10-board-exam-preparation.html">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="/class-10-board-exam-preparation">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="class 12 commerce accounts business studies economics tuition">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Commerce student studying accounts and business notes">
+              <img src="assets/images/commerce-accounts-tuition-student.webp" alt="Commerce student studying accounts, economics and business notes" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Commerce</span>
                 <h2>Class 12 Commerce and Accounts Tuition</h2>
                 <p>Accounts, economics and business studies need concept clarity, numerical practice and answer-writing strategies for better board performance.</p>
-                <a href="courses.html">Find commerce tutor</a>
+                <a href="/courses">Find commerce tutor</a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="best study techniques active recall spaced revision exam tips">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=700&q=80" alt="Study notebook and planning notes for active recall">
+              <img src="assets/images/effective-study-techniques-notebook.webp" alt="Study notebook showing planning techniques for active recall and revision" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Study Skills</span>
                 <h2>Best Study Techniques for School Students</h2>
                 <p>Active recall, spaced revision, timed writing practice and short notes can make exam preparation easier and more effective.</p>
-                <a href="courses.html">Find courses</a>
+                <a href="/courses">Find courses</a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="spoken English guide communication skills fluency classes">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=700&q=80" alt="Students practicing spoken English and communication skills">
+              <img src="assets/images/students-practicing-spoken-english.webp" alt="Students practising spoken English and communication skills together" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Spoken English</span>
                 <h2>Spoken English Guide for Fluency</h2>
                 <p>Daily speaking practice, listening exercises, vocabulary building and trainer feedback help learners speak English with more confidence.</p>
-                <a href="spoken-english-guide.html">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="/spoken-english-guide">Read full guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="coding for kids computer classes programming India">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=700&q=80" alt="Child learning coding and computer skills">
+              <img src="assets/images/coding-for-kids-computer-class.webp" alt="School student learning coding and practical computer skills" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Computer Courses</span>
                 <h2>Coding for Kids: Why Start Early?</h2>
                 <p>Coding classes build logic, creativity and problem-solving skills through simple projects, games, websites and beginner-friendly programming.</p>
-                <a href="courses.html">Explore coding classes</a>
+                <a href="/courses">Explore coding classes</a>
               </div>
             </article>
           </div>
           <div class="col-md-6 col-lg-4 blog-item" data-title="tutor registration India home tutor jobs online tutor jobs">
             <article class="blog-card h-100">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Professional tutor registering for teaching opportunities">
+              <img src="assets/images/professional-home-tutor-registration.webp" alt="Professional educator registering for home and online tutoring opportunities" loading="lazy" decoding="async" width="700" height="438">
               <div>
                 <span>Tutor Jobs</span>
                 <h2>Tutor Registration Guide for Teachers</h2>
                 <p>Qualified tutors can register with subject expertise, experience, qualification, preferred location and teaching mode for relevant opportunities.</p>
-                <a href="tutor-registration.html">Register as tutor</a>
+                <a href="/tutor-registration">Register as tutor</a>
               </div>
             </article>
           </div>
@@ -243,6 +446,90 @@
         </div>
       </div>
     </section>
+    <!-- Business trust signals -->
+    <section class="business-trust" aria-labelledby="business-trust-title">
+      <div class="container">
+        <h2 id="business-trust-title" class="visually-hidden">Tutorservices business information</h2>
+        <div class="business-trust-grid">
+          <div><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span><strong>Founder-led service</strong>Meenakshi Sharma</span></div>
+          <a href="tel:+917011090796"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Call for enquiries</strong>+91 7011090796</span></a>
+          <a href="mailto:tutorservices.in@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email support</strong>tutorservices.in@gmail.com</span></a>
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Service area</strong>New Delhi and online across India</span></div>
+        </div>
+        <p class="business-trust-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tutor qualifications, subject fit, teaching mode and availability are reviewed for each relevant enquiry before regular classes are confirmed.</p>
+      </div>
+    </section>
+    <!-- /Business trust signals -->
+    <!-- Cluster architecture -->
+<section class="cluster-architecture section-padding" aria-labelledby="cluster-overview-title"><div class="container"><div class="section-title"><span class="section-kicker">Learning Directory</span><h2 id="cluster-overview-title">Explore tuition by learning need</h2><p>Start with a learning mode, subject, class, exam or service area, then follow the most relevant guidance.</p></div><div class="cluster-overview-grid"><a class="cluster-card" href="/home-tuition"><strong>Home Tuition</strong><span>Personal tutor matching, benefits, selection guidance and local availability.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a><a class="cluster-card" href="/courses"><strong>Subjects</strong><span>Academic subjects, languages, commerce, computer science and coding support.</span></a><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/locations"><strong>Cities</strong><span>Home-tuition service areas in Delhi and online tuition availability across India.</span></a></div></div></section>
+<!-- /Cluster architecture -->
+    <!-- AI-ready answer guide -->
+    <section class="ai-answer-section section-padding" aria-labelledby="answer-guide-blog">
+      <div class="container">
+        <div class="ai-summary-box">
+          <span class="section-kicker">Quick Answer</span>
+          <h2 id="answer-guide-blog">What is Tutorservices education blog?</h2>
+          <p><strong>Definition:</strong> The Tutorservices education blog is a practical resource for parents, students and tutors covering tuition choices, study methods, exams and communication skills.</p>
+          <p class="ai-summary-line"><strong>In summary:</strong> Articles are organised around common questions so readers can understand an issue, compare options and take a clear next step.</p>
+        </div>
+
+        <div class="ai-guide-grid">
+          <section aria-labelledby="answer-guide-blog-takeaways">
+            <h2 id="answer-guide-blog-takeaways">Key takeaways</h2>
+            <ul class="ai-takeaways"><li>Parent guides explain tutor selection and tuition formats.</li><li>Student guides cover revision, exams and online learning.</li><li>Skill guides support spoken English and computer learning.</li></ul>
+          </section>
+          <section aria-labelledby="answer-guide-blog-steps">
+            <h2 id="answer-guide-blog-steps">Step-by-step guide</h2>
+            <ol class="ai-steps"><li>Choose the topic closest to the current learning need.</li><li>Read the definition and key recommendations first.</li><li>Use the steps or comparison to make a practical plan.</li><li>Visit the related service or registration page if support is needed.</li></ol>
+          </section>
+        </div>
+
+        <section class="ai-comparison" aria-labelledby="answer-guide-blog-comparison">
+          <h2 id="answer-guide-blog-comparison">Choose the right article type</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Main point</th></tr></thead>
+              <tbody><tr><th scope="row">Parent guide</th><td>Selecting tuition support</td><td>Decision criteria and questions</td></tr><tr><th scope="row">Study guide</th><td>Improving academic habits</td><td>Actionable routines and revision</td></tr><tr><th scope="row">Skill guide</th><td>English or computer learning</td><td>Practice methods and progress goals</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section class="ai-faq" aria-labelledby="answer-guide-blog-faq">
+          <h2 id="answer-guide-blog-faq">Frequently asked questions</h2>
+          <div class="ai-faq-grid">
+            <article><h3>Who are the blog articles written for?</h3><p>The articles are written for parents, school students, tutors and learners seeking practical academic or skill guidance.</p></article>
+            <article><h3>Are the articles a replacement for a tutor?</h3><p>No. Articles provide general educational guidance; individual learning difficulties may require personalised teaching support.</p></article>
+            <article><h3>How can readers find related services?</h3><p>Each article includes contextual links to relevant services, courses, locations or enquiry pages.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- /AI-ready answer guide -->
+<!-- Topic cluster links -->
+    <section class="topic-cluster-section" aria-labelledby="topic-cluster-blog">
+      <div class="container">
+        <div class="topic-cluster-heading">
+          <span class="section-kicker">Explore Related</span>
+          <h2 id="topic-cluster-blog">Turn guidance into a learning plan</h2>
+          <p>Connect the education guides with relevant services and tutor availability.</p>
+        </div>
+        <div class="topic-cluster-links">
+          <a class="topic-cluster-link" href="/services">
+            <span>Find a suitable tuition format</span>
+            <small>Compare personal, online, offline and group learning.</small>
+          </a>
+          <a class="topic-cluster-link" href="/locations">
+            <span>Explore location options</span>
+            <small>Check Delhi areas or choose online tuition from anywhere in India.</small>
+          </a>
+          <a class="topic-cluster-link" href="/best-home-tuition-services-india">
+            <span>Start with the complete parent guide</span>
+            <small>Understand tutor selection, subjects, boards and learning modes.</small>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Topic cluster links -->
   </main>
 
   <footer class="site-footer">
@@ -252,9 +539,6 @@
   </footer>
   <a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a>
-  <button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><script src="script.min.js"></script>
 </body>
 </html>

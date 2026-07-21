@@ -1,44 +1,328 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ"></script>
+  <!-- Deferred Google Analytics: loads after interaction or once the page is settled -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KNFJRWMJHZ');
+    function gtag(){ dataLayer.push(arguments); }
+    function loadTutorservicesAnalytics(){
+      if (window.tutorservicesAnalyticsLoaded) return;
+      window.tutorservicesAnalyticsLoaded = true;
+      const tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ";
+      document.head.appendChild(tag);
+      gtag("js", new Date());
+      gtag("config", "G-KNFJRWMJHZ");
+    }
+    ["pointerdown", "keydown"].forEach((eventName) =>
+      window.addEventListener(eventName, loadTutorservicesAnalytics, { once: true, passive: true })
+    );
+    window.addEventListener("load", () => window.setTimeout(loadTutorservicesAnalytics, 10000), { once: true });
   </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses | Academic, Commerce, Coding and Spoken English</title>
   <meta name="description" content="Browse tutorservices courses for Mathematics, Science, English, Hindi, Computer Science, Accounts, Commerce and Coding for Kids.">
   <meta name="keywords" content="tuition courses, maths tutor, science tutor, coding for kids, accounts tutor, spoken English">
-  <meta property="og:title" content="tutorservices Courses"><meta property="og:description" content="Find tutors for school subjects, computer courses, commerce and coding."><meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/tutor-services-logo.jpeg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"tutorservices Courses","about":["Mathematics","Science","English","Hindi","Computer Science","Accounts","Commerce","Coding for Kids"]}</script>
+  <link rel="canonical" href="https://www.tutorservices.in/courses">
+  <meta property="og:title" content="tutorservices Courses">
+  <meta property="og:description" content="Find tutors for school subjects, computer courses, commerce and coding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tutorservices.in/courses">
+  <meta property="og:site_name" content="tutorservices">
+  <meta property="og:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta property="og:image:alt" content="tutorservices logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Academic, Commerce, Coding and English Courses">
+  <meta name="twitter:description" content="Browse tutorservices courses for school subjects, commerce, coding and spoken English.">
+  <meta name="twitter:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta name="twitter:image:alt" content="tutorservices logo">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="layout.min.css">
+  <link rel="stylesheet" href="style.min.css"><link rel="icon" type="image/png" href="assets/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "LocalBusiness",
+          "EducationalOrganization"
+        ],
+        "@id": "https://www.tutorservices.in/#business",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "url": "https://www.tutorservices.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.tutorservices.in/#logo",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "contentUrl": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "caption": "Tutorservices logo"
+        },
+        "image": {
+          "@id": "https://www.tutorservices.in/#logo"
+        },
+        "slogan": "Learn Smarter, Achieve Faster",
+        "description": "Home tuition and online tutoring service connecting students and parents with tutors for academic subjects, board examinations and skill-based courses.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.tutorservices.in/#founder",
+          "name": "Meenakshi Sharma"
+        },
+        "email": "tutorservices.in@gmail.com",
+        "telephone": "+91-7011090796",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "City",
+            "name": "New Delhi"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+91-7011090796",
+          "email": "tutorservices.in@gmail.com",
+          "areaServed": "IN",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        "knowsAbout": [
+          "Home Tuition",
+          "Online Tuition",
+          "CBSE Tuition",
+          "ICSE Tuition",
+          "State Board Tuition",
+          "Spoken English",
+          "Computer Courses",
+          "Competitive Exam Preparation"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.tutorservices.in/#website",
+        "url": "https://www.tutorservices.in/",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "description": "Home tuition, online tuition and educational services for students across India.",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://www.tutorservices.in/#business"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.tutorservices.in/#founder",
+        "name": "Meenakshi Sharma",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "url": "https://www.tutorservices.in/about"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.tutorservices.in/courses#webpage",
+        "url": "https://www.tutorservices.in/courses",
+        "name": "Courses | Academic, Commerce, Coding and Spoken English",
+        "description": "Browse tutorservices courses for Mathematics, Science, English, Hindi, Computer Science, Accounts, Commerce and Coding for Kids.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/#website"
+        },
+        "about": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp"
+        },
+        "breadcrumb": {
+          "@id": "https://www.tutorservices.in/courses#breadcrumb"
+        },
+        "hasPart": [
+          {
+            "@id": "https://www.tutorservices.in/courses#faq"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.tutorservices.in/courses#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tutorservices.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Courses",
+            "item": "https://www.tutorservices.in/courses"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.tutorservices.in/courses#faq",
+        "url": "https://www.tutorservices.in/courses#faq",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/courses#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can courses follow the CBSE or ICSE syllabus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Academic tutor requirements can specify CBSE, ICSE or a State Board syllabus."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are coding classes available for children?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coding and computer-learning enquiries are accepted for children according to their age and current experience."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How should parents choose a course?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose according to the learner’s class, present difficulties, target outcome, preferred mode and available weekly practice time."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div id="loader" class="loader"><span>tutorservices</span></div>
-  <nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="index.html"><img src="assets/tutor-services-logo.jpeg" alt="tutorservices logo"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li><li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
+<nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="/"><img src="assets/tutor-services-logo.webp" alt="Tutorservices home tuition and online tutoring logo" decoding="async" loading="eager" fetchpriority="high" width="128" height="128"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/services">Services</a></li><li class="nav-item"><a class="nav-link active" href="/courses">Courses</a></li><li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li><li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
   <main>
     <section class="page-hero"><div class="container"><span class="section-kicker">Courses</span><h1>Find the right subject tutor faster.</h1><p>Search and filter courses for academics, languages, commerce and technology.</p><div class="search-wrap"><i class="fa-solid fa-search"></i><input id="courseSearch" type="search" placeholder="Search courses, subjects or skills" aria-label="Search courses"></div></div></section>
     <section class="section-padding">
       <div class="container">
         <div class="filter-bar" aria-label="Course filters"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="academic">Academic</button><button class="filter-btn" data-filter="language">Languages</button><button class="filter-btn" data-filter="commerce">Commerce</button><button class="filter-btn" data-filter="technology">Technology</button></div>
         <div class="row g-4 course-grid">
-          <div class="col-sm-6 col-lg-3 course-item" data-category="academic" data-name="mathematics maths algebra geometry"><article class="course-card"><i class="fa-solid fa-square-root-variable"></i><h2>Mathematics</h2><p>Class 1 to 12, board and exam practice.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="academic" data-name="science physics chemistry biology"><article class="course-card"><i class="fa-solid fa-flask"></i><h2>Science</h2><p>Concept clarity with experiments and examples.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="language" data-name="english spoken grammar writing"><article class="course-card"><i class="fa-solid fa-book-open"></i><h2>English</h2><p>School English, grammar and fluency.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="language" data-name="hindi grammar literature"><article class="course-card"><i class="fa-solid fa-language"></i><h2>Hindi</h2><p>Reading, writing, grammar and literature.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="technology" data-name="computer science digital skills"><article class="course-card"><i class="fa-solid fa-desktop"></i><h2>Computer Science</h2><p>School syllabus and practical skills.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="commerce" data-name="accounts accountancy"><article class="course-card"><i class="fa-solid fa-calculator"></i><h2>Accounts</h2><p>Ledgers, journal entries and practice sets.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="commerce" data-name="commerce business economics"><article class="course-card"><i class="fa-solid fa-chart-pie"></i><h2>Commerce</h2><p>Business studies, economics and concepts.</p><a href="student-registration.html">Enroll Now</a></article></div>
-          <div class="col-sm-6 col-lg-3 course-item" data-category="technology" data-name="coding for kids programming web apps"><article class="course-card"><i class="fa-solid fa-code"></i><h2>Coding for Kids</h2><p>Logic, Scratch, web basics and projects.</p><a href="student-registration.html">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="academic" data-name="mathematics maths algebra geometry"><article class="course-card"><i class="fa-solid fa-square-root-variable"></i><h2>Mathematics</h2><p>Class 1 to 12, board and exam practice.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="academic" data-name="science physics chemistry biology"><article class="course-card"><i class="fa-solid fa-flask"></i><h2>Science</h2><p>Concept clarity with experiments and examples.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="language" data-name="english spoken grammar writing"><article class="course-card"><i class="fa-solid fa-book-open"></i><h2>English</h2><p>School English, grammar and fluency.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="language" data-name="hindi grammar literature"><article class="course-card"><i class="fa-solid fa-language"></i><h2>Hindi</h2><p>Reading, writing, grammar and literature.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="technology" data-name="computer science digital skills"><article class="course-card"><i class="fa-solid fa-desktop"></i><h2>Computer Science</h2><p>School syllabus and practical skills.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="commerce" data-name="accounts accountancy"><article class="course-card"><i class="fa-solid fa-calculator"></i><h2>Accounts</h2><p>Ledgers, journal entries and practice sets.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="commerce" data-name="commerce business economics"><article class="course-card"><i class="fa-solid fa-chart-pie"></i><h2>Commerce</h2><p>Business studies, economics and concepts.</p><a href="/student-registration">Enroll Now</a></article></div>
+          <div class="col-sm-6 col-lg-3 course-item" data-category="technology" data-name="coding for kids programming web apps"><article class="course-card"><i class="fa-solid fa-code"></i><h2>Coding for Kids</h2><p>Logic, Scratch, web basics and projects.</p><a href="/student-registration">Enroll Now</a></article></div>
         </div>
       </div>
     </section>
+    <!-- Business trust signals -->
+    <section class="business-trust" aria-labelledby="business-trust-title">
+      <div class="container">
+        <h2 id="business-trust-title" class="visually-hidden">Tutorservices business information</h2>
+        <div class="business-trust-grid">
+          <div><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span><strong>Founder-led service</strong>Meenakshi Sharma</span></div>
+          <a href="tel:+917011090796"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Call for enquiries</strong>+91 7011090796</span></a>
+          <a href="mailto:tutorservices.in@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email support</strong>tutorservices.in@gmail.com</span></a>
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Service area</strong>New Delhi and online across India</span></div>
+        </div>
+        <p class="business-trust-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tutor qualifications, subject fit, teaching mode and availability are reviewed for each relevant enquiry before regular classes are confirmed.</p>
+      </div>
+    </section>
+    <!-- /Business trust signals -->
+    <!-- Cluster architecture -->
+<section class="cluster-architecture section-padding" aria-labelledby="cluster-subjects-title"><div class="container"><div class="section-title"><span class="section-kicker">Subjects Hub</span><h2 id="cluster-subjects-title">Related subjects resources</h2><p>Academic subjects, languages, commerce, computer science and coding support.</p></div><div class="cluster-member-links"><a href="/services"><strong>Tuition formats by subject</strong><span>Compare personal, online and group classes.</span></a><a href="/spoken-english-guide"><strong>Spoken English guide</strong><span>Improve speaking, listening and vocabulary.</span></a><a href="/class-10-board-exam-preparation"><strong>Class 10 subject preparation</strong><span>Plan revision across board subjects.</span></a><a href="/student-registration"><strong>Request a subject tutor</strong><span>State the exact subject and learning goal.</span></a></div><div class="cluster-related"><h3>Explore connected topics</h3><div class="cluster-overview-grid"><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a></div></div></div></section>
+<!-- /Cluster architecture -->
+    <!-- AI-ready answer guide -->
+    <section class="ai-answer-section section-padding" aria-labelledby="answer-guide-courses">
+      <div class="container">
+        <div class="ai-summary-box">
+          <span class="section-kicker">Quick Answer</span>
+          <h2 id="answer-guide-courses">What is Tutorservices course?</h2>
+          <p><strong>Definition:</strong> A Tutorservices course is tutor-led learning support for an academic subject or practical skill, selected according to the learner’s level and goals.</p>
+          <p class="ai-summary-line"><strong>In summary:</strong> Available areas include mathematics, science, languages, commerce, computer science, coding for children and spoken English.</p>
+        </div>
+
+        <div class="ai-guide-grid">
+          <section aria-labelledby="answer-guide-courses-takeaways">
+            <h2 id="answer-guide-courses-takeaways">Key takeaways</h2>
+            <ul class="ai-takeaways"><li>Course selection should match class level and learning goal.</li><li>Academic courses can follow school-board syllabi.</li><li>Skill courses focus on practical ability and regular practice.</li></ul>
+          </section>
+          <section aria-labelledby="answer-guide-courses-steps">
+            <h2 id="answer-guide-courses-steps">Step-by-step guide</h2>
+            <ol class="ai-steps"><li>Select the subject or skill the learner needs.</li><li>State the present level, class and board where relevant.</li><li>Choose a suitable learning mode and schedule.</li><li>Use the demo to confirm teaching style and course scope.</li></ol>
+          </section>
+        </div>
+
+        <section class="ai-comparison" aria-labelledby="answer-guide-courses-comparison">
+          <h2 id="answer-guide-courses-comparison">Compare course categories</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Main point</th></tr></thead>
+              <tbody><tr><th scope="row">Academic subjects</th><td>School understanding and exams</td><td>Class and board syllabus</td></tr><tr><th scope="row">Commerce subjects</th><td>Accounts, economics and business studies</td><td>Class 11 and 12 learners</td></tr><tr><th scope="row">Skill courses</th><td>English, computers and coding</td><td>Practical confidence and ability</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section class="ai-faq" aria-labelledby="answer-guide-courses-faq">
+          <h2 id="answer-guide-courses-faq">Frequently asked questions</h2>
+          <div class="ai-faq-grid">
+            <article><h3>Can courses follow the CBSE or ICSE syllabus?</h3><p>Yes. Academic tutor requirements can specify CBSE, ICSE or a State Board syllabus.</p></article>
+            <article><h3>Are coding classes available for children?</h3><p>Coding and computer-learning enquiries are accepted for children according to their age and current experience.</p></article>
+            <article><h3>How should parents choose a course?</h3><p>Choose according to the learner’s class, present difficulties, target outcome, preferred mode and available weekly practice time.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- /AI-ready answer guide -->
+<!-- Topic cluster links -->
+    <section class="topic-cluster-section" aria-labelledby="topic-cluster-courses">
+      <div class="container">
+        <div class="topic-cluster-heading">
+          <span class="section-kicker">Explore Related</span>
+          <h2 id="topic-cluster-courses">Connect courses with the right support</h2>
+          <p>Choose a learning format, check availability and review focused study guidance.</p>
+        </div>
+        <div class="topic-cluster-links">
+          <a class="topic-cluster-link" href="/services">
+            <span>Compare learning formats</span>
+            <small>See home, online, offline, individual and group tuition.</small>
+          </a>
+          <a class="topic-cluster-link" href="/locations">
+            <span>Find support in your area</span>
+            <small>Check Delhi tutor matching and online tuition across India.</small>
+          </a>
+          <a class="topic-cluster-link" href="/class-10-board-exam-preparation">
+            <span>Build a board-exam plan</span>
+            <small>Organise revision, written practice and sample papers.</small>
+          </a>
+          <a class="topic-cluster-link" href="/spoken-english-guide">
+            <span>Practise confident English</span>
+            <small>Follow a simple routine for speaking and listening skills.</small>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Topic cluster links -->
   </main>
-  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Learn, Grow & Succeed.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Learn, Grow & Succeed.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><script src="script.min.js"></script>
 </body>
 </html>

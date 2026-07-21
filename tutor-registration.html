@@ -1,29 +1,314 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ"></script>
+  <!-- Deferred Google Analytics: loads after interaction or once the page is settled -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KNFJRWMJHZ');
+    function gtag(){ dataLayer.push(arguments); }
+    function loadTutorservicesAnalytics(){
+      if (window.tutorservicesAnalyticsLoaded) return;
+      window.tutorservicesAnalyticsLoaded = true;
+      const tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=G-KNFJRWMJHZ";
+      document.head.appendChild(tag);
+      gtag("js", new Date());
+      gtag("config", "G-KNFJRWMJHZ");
+    }
+    ["pointerdown", "keydown"].forEach((eventName) =>
+      window.addEventListener(eventName, loadTutorservicesAnalytics, { once: true, passive: true })
+    );
+    window.addEventListener("load", () => window.setTimeout(loadTutorservicesAnalytics, 10000), { once: true });
   </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutor Registration | Join tutorservices</title>
   <meta name="description" content="Register as a tutor with tutorservices and get student leads for home tuition, online tuition, offline classes and group coaching.">
   <meta name="keywords" content="tutor registration, become a tutor, teaching jobs, home tutor India">
-  <meta property="og:title" content="Tutor Registration | tutorservices"><meta property="og:description" content="Join tutorservices as a verified tutor."><meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/tutor-services-logo.jpeg">
+  <link rel="canonical" href="https://www.tutorservices.in/tutor-registration">
+  <meta property="og:title" content="Tutor Registration | tutorservices">
+  <meta property="og:description" content="Join tutorservices as a verified tutor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tutorservices.in/tutor-registration">
+  <meta property="og:site_name" content="tutorservices">
+  <meta property="og:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta property="og:image:alt" content="tutorservices logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tutor Registration | Join tutorservices">
+  <meta name="twitter:description" content="Register for home tuition, online tuition, offline classes and group coaching opportunities.">
+  <meta name="twitter:image" content="https://www.tutorservices.in/assets/tutor-services-logo.webp">
+  <meta name="twitter:image:alt" content="tutorservices logo">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="layout.min.css">
+  <link rel="stylesheet" href="style.min.css"><link rel="icon" type="image/png" href="assets/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "Organization",
+          "LocalBusiness",
+          "EducationalOrganization"
+        ],
+        "@id": "https://www.tutorservices.in/#business",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "url": "https://www.tutorservices.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.tutorservices.in/#logo",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "contentUrl": "https://www.tutorservices.in/assets/tutor-services-logo.webp",
+          "caption": "Tutorservices logo"
+        },
+        "image": {
+          "@id": "https://www.tutorservices.in/#logo"
+        },
+        "slogan": "Learn Smarter, Achieve Faster",
+        "description": "Home tuition and online tutoring service connecting students and parents with tutors for academic subjects, board examinations and skill-based courses.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.tutorservices.in/#founder",
+          "name": "Meenakshi Sharma"
+        },
+        "email": "tutorservices.in@gmail.com",
+        "telephone": "+91-7011090796",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "City",
+            "name": "New Delhi"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+91-7011090796",
+          "email": "tutorservices.in@gmail.com",
+          "areaServed": "IN",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        "knowsAbout": [
+          "Home Tuition",
+          "Online Tuition",
+          "CBSE Tuition",
+          "ICSE Tuition",
+          "State Board Tuition",
+          "Spoken English",
+          "Computer Courses",
+          "Competitive Exam Preparation"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.tutorservices.in/#website",
+        "url": "https://www.tutorservices.in/",
+        "name": "Tutorservices",
+        "alternateName": "Tutorservices.in",
+        "description": "Home tuition, online tuition and educational services for students across India.",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://www.tutorservices.in/#business"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.tutorservices.in/#founder",
+        "name": "Meenakshi Sharma",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "url": "https://www.tutorservices.in/about"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.tutorservices.in/tutor-registration#webpage",
+        "url": "https://www.tutorservices.in/tutor-registration",
+        "name": "Tutor Registration | Join tutorservices",
+        "description": "Register as a tutor with tutorservices and get student leads for home tuition, online tuition, offline classes and group coaching.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/#website"
+        },
+        "about": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.tutorservices.in/assets/tutor-services-logo.webp"
+        },
+        "breadcrumb": {
+          "@id": "https://www.tutorservices.in/tutor-registration#breadcrumb"
+        },
+        "hasPart": [
+          {
+            "@id": "https://www.tutorservices.in/tutor-registration#faq"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.tutorservices.in/tutor-registration#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tutorservices.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tutor Registration",
+            "item": "https://www.tutorservices.in/tutor-registration"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.tutorservices.in/tutor-registration#faq",
+        "url": "https://www.tutorservices.in/tutor-registration#faq",
+        "isPartOf": {
+          "@id": "https://www.tutorservices.in/tutor-registration#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does registration guarantee student leads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Registration allows Tutorservices to consider the tutor for suitable enquiries, but availability and matching are not guaranteed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which resume details are useful?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Include qualifications, teaching experience, subjects, class levels, boards, locations and any relevant certifications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can tutors teach online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Tutors can indicate online teaching preferences along with offline or home-tuition locations."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div id="loader" class="loader"><span>tutorservices</span></div>
-  <nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="index.html"><img src="assets/tutor-services-logo.jpeg" alt="tutorservices logo"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li><li class="nav-item"><a class="nav-link" href="student-registration.html">Student Registration</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
+<nav class="navbar navbar-expand-lg fixed-top"><div class="container"><a class="navbar-brand" href="/"><img src="assets/tutor-services-logo.webp" alt="Tutorservices home tuition and online tutoring logo" decoding="async" loading="eager" fetchpriority="high" width="128" height="128"><span class="brand-copy">tutorservices<small>Learn Smarter, Achieve Faster</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/services">Services</a></li><li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li><li class="nav-item"><a class="nav-link" href="/student-registration">Student Registration</a></li><li class="nav-item"><button class="theme-toggle ms-lg-2" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li></ul></div></div></nav>
   <main>
     <section class="page-hero"><div class="container"><span class="section-kicker">Tutor Registration</span><h1>Grow your teaching career with quality student leads.</h1><p>Register for home tuition, online tuition, offline coaching, one-to-one and group classes.</p></div></section>
     <section class="section-padding"><div class="container"><div class="row g-5"><div class="col-lg-5"><h2>Why tutors join us</h2><ul class="check-list"><li>Verified student inquiries</li><li>Flexible online and offline teaching modes</li><li>Academic, hobby and computer course opportunities</li><li>Supportive onboarding by the tutorservices team</li></ul></div><div class="col-lg-7"><form class="registration-form needs-validation" id="tutorForm" data-inquiry-type="Tutor Registration Inquiry" novalidate><div class="row g-3"><div class="col-md-6"><label>Full Name</label><input class="form-control" name="fullName" required></div><div class="col-md-6"><label>Mobile Number</label><input class="form-control" name="mobile" pattern="[0-9]{10}" required></div><div class="col-md-6"><label>Email</label><input class="form-control" type="email" name="email" required></div><div class="col-md-6"><label>Qualification</label><input class="form-control" name="qualification" required></div><div class="col-md-6"><label>Experience</label><input class="form-control" name="experience" placeholder="Example: 3 years" required></div><div class="col-md-6"><label>Subject Expertise</label><input class="form-control" name="subjects" required></div><div class="col-md-6"><label>Boards Taught</label><input class="form-control" name="boards" placeholder="CBSE, ICSE, State, etc." required></div><div class="col-md-6"><label>Classes Taught</label><input class="form-control" name="classes" placeholder="Class 1-5, 6-10, 11-12" required></div><div class="col-md-6"><label>Preferred Mode</label><select class="form-select" name="mode" required><option value="">Select Mode</option><option>Home Tuition</option><option>Online Tuition</option><option>Offline Tuition</option><option>Group Classes</option></select></div><div class="col-md-6"><label>Preferred Location</label><input class="form-control" name="location" required></div><div class="col-md-6"><label>Expected Fees</label><input class="form-control" name="fees" placeholder="Per hour / per month"></div><div class="col-md-6"><label>Available Timing</label><input class="form-control" name="timing" placeholder="Morning, evening, weekend"></div><div class="col-12"><label>Upload Resume</label><input class="form-control" type="file" name="resume" accept=".pdf,.doc,.docx" required></div><div class="col-12"><button class="btn btn-brand w-100" type="submit">Submit Tutor Profile</button></div></div></form></div></div></div></section>
+    <!-- Business trust signals -->
+    <section class="business-trust" aria-labelledby="business-trust-title">
+      <div class="container">
+        <h2 id="business-trust-title" class="visually-hidden">Tutorservices business information</h2>
+        <div class="business-trust-grid">
+          <div><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span><strong>Founder-led service</strong>Meenakshi Sharma</span></div>
+          <a href="tel:+917011090796"><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Call for enquiries</strong>+91 7011090796</span></a>
+          <a href="mailto:tutorservices.in@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email support</strong>tutorservices.in@gmail.com</span></a>
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Service area</strong>New Delhi and online across India</span></div>
+        </div>
+        <p class="business-trust-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tutor qualifications, subject fit, teaching mode and availability are reviewed for each relevant enquiry before regular classes are confirmed.</p>
+      </div>
+    </section>
+    <!-- /Business trust signals -->
+    <!-- Cluster architecture -->
+<section class="cluster-architecture section-padding" aria-labelledby="cluster-overview-title"><div class="container"><div class="section-title"><span class="section-kicker">Learning Directory</span><h2 id="cluster-overview-title">Explore tuition by learning need</h2><p>Start with a learning mode, subject, class, exam or service area, then follow the most relevant guidance.</p></div><div class="cluster-overview-grid"><a class="cluster-card" href="/home-tuition"><strong>Home Tuition</strong><span>Personal tutor matching, benefits, selection guidance and local availability.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a><a class="cluster-card" href="/courses"><strong>Subjects</strong><span>Academic subjects, languages, commerce, computer science and coding support.</span></a><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/locations"><strong>Cities</strong><span>Home-tuition service areas in Delhi and online tuition availability across India.</span></a></div></div></section>
+<!-- /Cluster architecture -->
+    <!-- AI-ready answer guide -->
+    <section class="ai-answer-section section-padding" aria-labelledby="answer-guide-tutor-registration">
+      <div class="container">
+        <div class="ai-summary-box">
+          <span class="section-kicker">Quick Answer</span>
+          <h2 id="answer-guide-tutor-registration">What is tutor registration?</h2>
+          <p><strong>Definition:</strong> Tutor registration is the process of submitting teaching qualifications, experience, subjects and preferred locations to be considered for relevant student enquiries.</p>
+          <p class="ai-summary-line"><strong>In summary:</strong> Complete and accurate tutor profiles are easier to match with students who need the same subjects, class levels and teaching mode.</p>
+        </div>
+
+        <div class="ai-guide-grid">
+          <section aria-labelledby="answer-guide-tutor-registration-takeaways">
+            <h2 id="answer-guide-tutor-registration-takeaways">Key takeaways</h2>
+            <ul class="ai-takeaways"><li>List genuine qualifications and experience.</li><li>Specify subjects, classes and boards clearly.</li><li>Keep contact and preferred-location details current.</li></ul>
+          </section>
+          <section aria-labelledby="answer-guide-tutor-registration-steps">
+            <h2 id="answer-guide-tutor-registration-steps">Step-by-step guide</h2>
+            <ol class="ai-steps"><li>Enter personal and contact information.</li><li>Add qualifications and teaching experience.</li><li>List subject expertise and preferred location.</li><li>Upload the resume and submit the registration.</li></ol>
+          </section>
+        </div>
+
+        <section class="ai-comparison" aria-labelledby="answer-guide-tutor-registration-comparison">
+          <h2 id="answer-guide-tutor-registration-comparison">What families assess in a tutor</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Main point</th></tr></thead>
+              <tbody><tr><th scope="row">Subject knowledge</th><td>Accurate explanations</td><td>Relevant qualification and expertise</td></tr><tr><th scope="row">Teaching ability</th><td>Clear and patient instruction</td><td>Experience and demo performance</td></tr><tr><th scope="row">Reliability</th><td>Regular classes and communication</td><td>Availability and professional conduct</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section class="ai-faq" aria-labelledby="answer-guide-tutor-registration-faq">
+          <h2 id="answer-guide-tutor-registration-faq">Frequently asked questions</h2>
+          <div class="ai-faq-grid">
+            <article><h3>Does registration guarantee student leads?</h3><p>No. Registration allows Tutorservices to consider the tutor for suitable enquiries, but availability and matching are not guaranteed.</p></article>
+            <article><h3>Which resume details are useful?</h3><p>Include qualifications, teaching experience, subjects, class levels, boards, locations and any relevant certifications.</p></article>
+            <article><h3>Can tutors teach online?</h3><p>Yes. Tutors can indicate online teaching preferences along with offline or home-tuition locations.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- /AI-ready answer guide -->
+<!-- Topic cluster links -->
+    <section class="topic-cluster-section" aria-labelledby="topic-cluster-tutor-registration">
+      <div class="container">
+        <div class="topic-cluster-heading">
+          <span class="section-kicker">Explore Related</span>
+          <h2 id="topic-cluster-tutor-registration">Understand student and service needs</h2>
+          <p>Review the services, areas and parent expectations connected with Tutorservices enquiries.</p>
+        </div>
+        <div class="topic-cluster-links">
+          <a class="topic-cluster-link" href="/services">
+            <span>Review teaching opportunities</span>
+            <small>See the academic and skill-learning services offered to families.</small>
+          </a>
+          <a class="topic-cluster-link" href="/locations">
+            <span>Explore service areas</span>
+            <small>Understand local Delhi enquiries and online teaching reach.</small>
+          </a>
+          <a class="topic-cluster-link" href="/best-home-tuition-services-india">
+            <span>What families consider</span>
+            <small>Read the factors parents use when choosing a tutor.</small>
+          </a>
+          <a class="topic-cluster-link" href="/blog">
+            <span>Visit the education blog</span>
+            <small>Explore study, tuition and communication-skills guides.</small>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Topic cluster links -->
   </main>
-  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Tutor registration across India.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom">&copy; 2026 tutorservices. Tutor registration across India.</div></div></footer><a class="sticky-whatsapp" href="https://wa.me/917011090796" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call-now" href="tel:+917011090796" aria-label="Call tutorservices"><i class="fa-solid fa-phone"></i></a><button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><script src="script.min.js"></script>
 </body>
 </html>

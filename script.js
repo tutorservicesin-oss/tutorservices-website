@@ -1,5 +1,4 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("loader");
   const themeToggle = document.querySelector(".theme-toggle");
   const backToTop = document.querySelector(".back-to-top");
   const demoButtons = document.querySelectorAll("[data-demo-open]");
@@ -8,11 +7,64 @@
   const exitPopup = document.querySelector(".exit-popup");
   const exitClose = document.querySelector(".exit-close");
 
-  if (window.AOS) {
-    AOS.init({ duration: 750, once: true, offset: 80 });
-  }
+  document.querySelectorAll(".navbar-toggler[data-bs-target]").forEach((button) => {
+    const target = document.querySelector(button.dataset.bsTarget);
+    button.setAttribute("aria-expanded", "false");
+    button.addEventListener("click", () => {
+      const isOpen = target?.classList.toggle("show") || false;
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
 
-  window.setTimeout(() => loader?.classList.add("hidden"), 450);
+  document.querySelectorAll(".accordion-button[data-bs-target]").forEach((button) => {
+    const panel = document.querySelector(button.dataset.bsTarget);
+    button.addEventListener("click", () => {
+      const accordion = button.closest(".accordion");
+      const willOpen = !panel?.classList.contains("show");
+
+      accordion?.querySelectorAll(".accordion-collapse.show").forEach((openPanel) => {
+        openPanel.classList.remove("show");
+        const openButton = accordion.querySelector(`[data-bs-target="#${openPanel.id}"]`);
+        openButton?.classList.add("collapsed");
+        openButton?.setAttribute("aria-expanded", "false");
+      });
+
+      panel?.classList.toggle("show", willOpen);
+      button.classList.toggle("collapsed", !willOpen);
+      button.setAttribute("aria-expanded", String(willOpen));
+    });
+  });
+
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    const slides = [...carousel.querySelectorAll(".carousel-item")];
+    if (slides.length < 2) return;
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("active")));
+    const showSlide = (nextIndex) => {
+      slides[activeIndex].classList.remove("active");
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      slides[activeIndex].classList.add("active");
+    };
+    carousel.querySelector(".carousel-control-prev")?.addEventListener("click", () => showSlide(activeIndex - 1));
+    carousel.querySelector(".carousel-control-next")?.addEventListener("click", () => showSlide(activeIndex + 1));
+  });
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    modal.style.display = "block";
+    modal.classList.add("show");
+    modal.setAttribute("aria-modal", "true");
+    modal.removeAttribute("aria-hidden");
+    document.body.classList.add("modal-open");
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    modal.removeAttribute("aria-modal");
+    document.body.classList.remove("modal-open");
+  };
 
   if (localStorage.getItem("tutorservices-theme") === "dark") {
     document.body.classList.add("dark-mode");
@@ -23,18 +75,33 @@
     localStorage.setItem("tutorservices-theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
   });
 
-  window.addEventListener("scroll", () => {
-    backToTop?.classList.toggle("show", window.scrollY > 500);
-  });
+  if (backToTop) {
+    let scrollUpdateQueued = false;
+    window.addEventListener("scroll", () => {
+      if (scrollUpdateQueued) return;
+      scrollUpdateQueued = true;
+      requestAnimationFrame(() => {
+        backToTop.classList.toggle("show", window.scrollY > 500);
+        scrollUpdateQueued = false;
+      });
+    }, { passive: true });
+  }
 
   backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
   demoButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const modalElement = document.getElementById("demoModal");
-      if (modalElement && window.bootstrap) {
-        new bootstrap.Modal(modalElement).show();
-      }
+      openModal(document.getElementById("demoModal"));
+    });
+  });
+
+  document.querySelectorAll('[data-bs-dismiss="modal"]').forEach((button) => {
+    button.addEventListener("click", () => closeModal(button.closest(".modal")));
+  });
+
+  document.querySelectorAll(".modal").forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal(modal);
     });
   });
 
