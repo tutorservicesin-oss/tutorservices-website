@@ -41,6 +41,16 @@ const clusters = {
     ],
     related: ['classes', 'exams']
   },
+  boards: {
+    label: 'Boards',
+    pillarFile: 'boards.html',
+    description: 'CBSE, ICSE and State Board tuition organised around curriculum and examination requirements.',
+    members: [
+      ['boards/cbse-tuition.html', 'CBSE tuition', 'Find NCERT-aligned home and online tuition for Classes 1 to 12.'],
+      ['boards/icse-tuition.html', 'ICSE tuition', 'Build detailed subject knowledge, analytical skills and precise written expression.']
+    ],
+    related: ['subjects', 'classes', 'exams']
+  },
   classes: {
     label: 'Classes',
     pillarFile: 'classes.html',
@@ -94,6 +104,9 @@ const pageCluster = {
   'subjects/biology-tuition.html': 'subjects',
   'courses.html': 'subjects',
   'spoken-english-guide.html': 'subjects',
+  'boards.html': 'boards',
+  'boards/cbse-tuition.html': 'boards',
+  'boards/icse-tuition.html': 'boards',
   'classes.html': 'classes',
   'student-registration.html': 'classes',
   'exam-preparation.html': 'exams',
