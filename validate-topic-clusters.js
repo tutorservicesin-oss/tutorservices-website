@@ -4,10 +4,20 @@ const { clusters } = require('./topic-cluster-data');
 
 const root = __dirname;
 const excludedFiles = new Set(['google4e98645dcf787467.html']);
-const files = fs.readdirSync(root).filter((fileName) => fileName.endsWith('.html') && !excludedFiles.has(fileName));
+function findHtmlFiles(directory, relativeDirectory = '') {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const relativePath = path.join(relativeDirectory, entry.name);
+    const absolutePath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return findHtmlFiles(absolutePath, relativePath);
+    if (!entry.name.endsWith('.html') || excludedFiles.has(entry.name)) return [];
+    return [relativePath.replaceAll('\\', '/')];
+  });
+}
+
+const files = findHtmlFiles(root);
 
 function cleanUrl(fileName) {
-  return fileName === 'index.html' ? '/' : `/${path.basename(fileName, '.html').toLowerCase()}`;
+  return fileName === 'index.html' ? '/' : `/${fileName.replace(/\.html$/i, '').toLowerCase()}`;
 }
 
 function extractLinks(html) {

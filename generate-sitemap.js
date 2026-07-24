@@ -10,6 +10,7 @@ const mainPages = [
   'home-tuition.html',
   'online-tuition.html',
   'courses.html',
+  'subjects.html',
   'classes.html',
   'exam-preparation.html',
   'student-registration.html',
@@ -33,14 +34,23 @@ function getCanonicalUrl(fileName) {
 function getPageSettings(fileName) {
   if (fileName === 'index.html') return { changefreq: 'weekly', priority: '1.0' };
   if (fileName === 'blog.html') return { changefreq: 'weekly', priority: '0.9' };
-  if (['home-tuition.html', 'online-tuition.html', 'courses.html', 'classes.html', 'exam-preparation.html', 'locations.html'].includes(fileName)) return { changefreq: 'monthly', priority: '0.9' };
+  if (fileName.startsWith('subjects/') || ['home-tuition.html', 'online-tuition.html', 'courses.html', 'subjects.html', 'classes.html', 'exam-preparation.html', 'locations.html'].includes(fileName)) return { changefreq: 'monthly', priority: '0.9' };
   if (fileName.includes('registration')) return { changefreq: 'monthly', priority: '0.8' };
   if (mainPages.includes(fileName)) return { changefreq: 'monthly', priority: '0.8' };
   return { changefreq: 'monthly', priority: '0.8' };
 }
 
-const htmlFiles = fs.readdirSync(projectRoot)
-  .filter((fileName) => fileName.endsWith('.html') && !excludedFiles.has(fileName))
+function findHtmlFiles(directory, relativeDirectory = '') {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const relativePath = path.join(relativeDirectory, entry.name);
+    const absolutePath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return findHtmlFiles(absolutePath, relativePath);
+    if (!entry.name.endsWith('.html') || excludedFiles.has(entry.name)) return [];
+    return [relativePath.replaceAll('\\', '/')];
+  });
+}
+
+const htmlFiles = findHtmlFiles(projectRoot)
   .sort((first, second) => {
     const firstIndex = mainPages.indexOf(first);
     const secondIndex = mainPages.indexOf(second);

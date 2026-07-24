@@ -1,0 +1,23 @@
+{
+  "name": "TutorServices",
+  "short_name": "TutorServices",
+  "description": "Home tuition and online tutoring services for students across India.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/tutor-services-logo.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

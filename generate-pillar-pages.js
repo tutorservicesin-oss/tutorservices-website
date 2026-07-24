@@ -88,9 +88,9 @@ function renderPage(fileName, page) {
   <meta name="description" content="${page.description}"><meta name="keywords" content="${page.keywords}"><meta name="robots" content="index, follow">
   <link rel="canonical" href="${siteUrl}${route}">
   <meta property="og:title" content="${page.title}"><meta property="og:description" content="${page.description}"><meta property="og:type" content="website"><meta property="og:url" content="${siteUrl}${route}"><meta property="og:site_name" content="Tutorservices"><meta property="og:image" content="${siteUrl}${page.image}"><meta property="og:image:alt" content="${page.imageAlt}">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${page.title}"><meta name="twitter:description" content="${page.description}"><meta name="twitter:image" content="${siteUrl}${page.image}"><meta name="twitter:image:alt" content="${page.imageAlt}"><meta name="theme-color" content="#0B2447">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${page.title}"><meta name="twitter:description" content="${page.description}"><meta name="twitter:image" content="${siteUrl}${page.image}"><meta name="twitter:image:alt" content="${page.imageAlt}"><meta name="theme-color" content="#050816">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=optional" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=optional"></noscript>
-  <link rel="stylesheet" href="layout.min.css"><link rel="stylesheet" href="style.min.css?v=20260721-icons2">
+  <link rel="stylesheet" href="layout.min.css"><link rel="stylesheet" href="style.min.css?v=20260721-neon3">
   <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"><link rel="icon" type="image/png" href="/assets/favicon.png">
 </head>
 <body>
