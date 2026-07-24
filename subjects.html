@@ -100,23 +100,41 @@
         ]
       },
       {
+        "@type": "Service",
+        "@id": "https://www.tutorservices.in/subjects#service",
+        "name": "Subject Tuition in India",
+        "serviceType": "Home and online subject tuition matching",
+        "description": "Tutor matching for academic subjects, languages, commerce, computer science and coding across Class 1 to 12 in India.",
+        "provider": {
+          "@id": "https://www.tutorservices.in/#business"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student"
+        }
+      },
+      {
         "@type": "ItemList",
         "@id": "https://www.tutorservices.in/subjects#subjects",
         "name": "Subject tuition categories",
         "numberOfItems": 12,
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Mathematics Tuition"},
-          {"@type": "ListItem", "position": 2, "name": "Science Tuition"},
-          {"@type": "ListItem", "position": 3, "name": "Physics Tuition"},
-          {"@type": "ListItem", "position": 4, "name": "Chemistry Tuition"},
-          {"@type": "ListItem", "position": 5, "name": "Biology Tuition"},
-          {"@type": "ListItem", "position": 6, "name": "English Tuition"},
-          {"@type": "ListItem", "position": 7, "name": "Hindi Tuition"},
-          {"@type": "ListItem", "position": 8, "name": "Accountancy Tuition"},
-          {"@type": "ListItem", "position": 9, "name": "Economics Tuition"},
-          {"@type": "ListItem", "position": 10, "name": "Business Studies Tuition"},
-          {"@type": "ListItem", "position": 11, "name": "Computer Science Tuition"},
-          {"@type": "ListItem", "position": 12, "name": "Coding for Kids"}
+          {"@type": "ListItem", "position": 1, "name": "Mathematics Tuition", "item": "https://www.tutorservices.in/subjects/mathematics-tuition"},
+          {"@type": "ListItem", "position": 2, "name": "Science Tuition", "item": "https://www.tutorservices.in/subjects/science-tuition"},
+          {"@type": "ListItem", "position": 3, "name": "English Tuition", "item": "https://www.tutorservices.in/subjects/english-tuition"},
+          {"@type": "ListItem", "position": 4, "name": "Physics Tuition", "item": "https://www.tutorservices.in/subjects/physics-tuition"},
+          {"@type": "ListItem", "position": 5, "name": "Chemistry Tuition", "item": "https://www.tutorservices.in/subjects/chemistry-tuition"},
+          {"@type": "ListItem", "position": 6, "name": "Biology Tuition", "item": "https://www.tutorservices.in/subjects/biology-tuition"},
+          {"@type": "ListItem", "position": 7, "name": "Hindi Tuition", "item": "https://www.tutorservices.in/subjects#hindi"},
+          {"@type": "ListItem", "position": 8, "name": "Accountancy Tuition", "item": "https://www.tutorservices.in/subjects#accountancy"},
+          {"@type": "ListItem", "position": 9, "name": "Economics Tuition", "item": "https://www.tutorservices.in/subjects#economics"},
+          {"@type": "ListItem", "position": 10, "name": "Business Studies Tuition", "item": "https://www.tutorservices.in/subjects#business-studies"},
+          {"@type": "ListItem", "position": 11, "name": "Computer Science Tuition", "item": "https://www.tutorservices.in/subjects#computer-science"},
+          {"@type": "ListItem", "position": 12, "name": "Coding for Kids", "item": "https://www.tutorservices.in/subjects#coding-for-kids"}
         ]
       },
       {
@@ -262,15 +280,15 @@
         <div class="section-title">
           <span class="section-kicker">Subject Directory</span>
           <h2 id="subject-directory-title">Explore subject tutors by learning area</h2>
-          <p>Each subject card is ready to connect to a dedicated subject page as the TutorServices learning directory expands.</p>
+          <p>Explore dedicated tuition guides for core academic subjects and request support for additional languages, commerce and technology subjects.</p>
         </div>
         <div class="row g-4">
           <div class="col-sm-6 col-lg-4" id="mathematics"><article class="service-card tall"><i class="fa-solid fa-square-root-variable"></i><h3>Mathematics</h3><p>Concept building, calculation practice, algebra, geometry and exam-focused problem solving.</p><a href="/subjects/mathematics-tuition">Explore mathematics tuition</a></article></div>
           <div class="col-sm-6 col-lg-4" id="science"><article class="service-card tall"><i class="fa-solid fa-flask-vial"></i><h3>Science</h3><p>Clear explanations, diagrams, experiments and revision support for school science.</p><a href="/subjects/science-tuition">Explore science tuition</a></article></div>
+          <div class="col-sm-6 col-lg-4" id="english"><article class="service-card tall"><i class="fa-solid fa-book-open"></i><h3>English</h3><p>Improve grammar, comprehension, writing, literature understanding and communication.</p><a href="/subjects/english-tuition">Explore English tuition</a></article></div>
           <div class="col-sm-6 col-lg-4" id="physics"><article class="service-card tall"><i class="fa-solid fa-atom"></i><h3>Physics</h3><p>Build conceptual understanding and confidence with formulas, numericals and applications.</p><a href="/subjects/physics-tuition">Explore Physics tuition</a></article></div>
           <div class="col-sm-6 col-lg-4" id="chemistry"><article class="service-card tall"><i class="fa-solid fa-vials"></i><h3>Chemistry</h3><p>Support for chemical concepts, equations, reactions, numericals and exam revision.</p><a href="/subjects/chemistry-tuition">Explore Chemistry tuition</a></article></div>
           <div class="col-sm-6 col-lg-4" id="biology"><article class="service-card tall"><i class="fa-solid fa-dna"></i><h3>Biology</h3><p>Understand terminology, processes and diagrams through structured, chapter-wise guidance.</p><a href="/subjects/biology-tuition">Explore Biology tuition</a></article></div>
-          <div class="col-sm-6 col-lg-4" id="english"><article class="service-card tall"><i class="fa-solid fa-book-open"></i><h3>English</h3><p>Improve grammar, comprehension, writing, literature understanding and communication.</p><a href="/subjects/english-tuition">Explore English tuition</a></article></div>
           <div class="col-sm-6 col-lg-4" id="hindi"><article class="service-card tall"><i class="fa-solid fa-language"></i><h3>Hindi</h3><p>Strengthen reading, writing, grammar, vocabulary and understanding of literature.</p><a href="/student-registration" data-future-href="/subjects/hindi-tuition">Find a Hindi tutor</a></article></div>
           <div class="col-sm-6 col-lg-4" id="accountancy"><article class="service-card tall"><i class="fa-solid fa-calculator"></i><h3>Accountancy</h3><p>Step-by-step support for journal entries, ledgers, financial statements and practice problems.</p><a href="/student-registration" data-future-href="/subjects/accountancy-tuition">Find an accountancy tutor</a></article></div>
           <div class="col-sm-6 col-lg-4" id="economics"><article class="service-card tall"><i class="fa-solid fa-chart-line"></i><h3>Economics</h3><p>Learn key economic concepts, diagrams, data interpretation and answer-writing techniques.</p><a href="/student-registration" data-future-href="/subjects/economics-tuition">Find an economics tutor</a></article></div>
