@@ -47,7 +47,10 @@ const clusters = {
     description: 'CBSE, ICSE and State Board tuition organised around curriculum and examination requirements.',
     members: [
       ['boards/cbse-tuition.html', 'CBSE tuition', 'Find NCERT-aligned home and online tuition for Classes 1 to 12.'],
-      ['boards/icse-tuition.html', 'ICSE tuition', 'Build detailed subject knowledge, analytical skills and precise written expression.']
+      ['boards/icse-tuition.html', 'ICSE tuition', 'Build detailed subject knowledge, analytical skills and precise written expression.'],
+      ['boards/state-board-tuition.html', 'State Board tuition', 'Find support aligned with regional syllabi, textbooks, languages and examinations.'],
+      ['boards/class-10-board-tuition.html', 'Class 10 board tuition', 'Find subject support, regular testing and examination-focused tuition for the board year.'],
+      ['boards/class-12-board-tuition.html', 'Class 12 board tuition', 'Find stream-specific subject experts, mock tests and university-ready board preparation.']
     ],
     related: ['subjects', 'classes', 'exams']
   },
@@ -107,6 +110,9 @@ const pageCluster = {
   'boards.html': 'boards',
   'boards/cbse-tuition.html': 'boards',
   'boards/icse-tuition.html': 'boards',
+  'boards/state-board-tuition.html': 'boards',
+  'boards/class-10-board-tuition.html': 'boards',
+  'boards/class-12-board-tuition.html': 'boards',
   'classes.html': 'classes',
   'student-registration.html': 'classes',
   'exam-preparation.html': 'exams',
