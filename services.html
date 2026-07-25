@@ -161,9 +161,14 @@
             "@id": "https://www.tutorservices.in/services#faq"
           }
         ],
-        "mainEntity": {
-          "@id": "https://www.tutorservices.in/services#service"
-        }
+        "mainEntity": [
+          {
+            "@id": "https://www.tutorservices.in/services#service"
+          },
+          {
+            "@id": "https://www.tutorservices.in/services#itemlist"
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -203,6 +208,63 @@
           "@type": "Country",
           "name": "India"
         }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.tutorservices.in/services#itemlist",
+        "name": "Tutorservices tuition and learning services",
+        "numberOfItems": 8,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home Tuition",
+            "url": "https://www.tutorservices.in/home-tuition"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Online Tuition",
+            "url": "https://www.tutorservices.in/online-tuition"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Offline Tuition",
+            "url": "https://www.tutorservices.in/offline-tuition"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "One-to-One Tuition",
+            "url": "https://www.tutorservices.in/one-to-one-tuition"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Group Tuition",
+            "url": "https://www.tutorservices.in/group-tuition"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Academic Coaching",
+            "url": "https://www.tutorservices.in/academic-coaching"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Computer Courses",
+            "url": "https://www.tutorservices.in/computer-courses"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Hobby Classes",
+            "url": "https://www.tutorservices.in/hobby-classes"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -248,16 +310,23 @@
   </header>
   <main>
     <section class="page-hero"><div class="container"><span class="section-kicker">Services</span><h1>Complete tuition and skill-learning solutions.</h1><p>Choose expert-led online, offline, one-to-one and group learning across India.</p></div></section>
+    <nav class="container" aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Services</li>
+      </ol>
+    </nav>
     <section class="section-padding"><div class="container"><div class="row g-4">
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-house-user"></i><h2>Home Tuition</h2><p>Personalized doorstep learning for school subjects, board exams and concept clarity.</p><a href="/student-registration">Book home tutor</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-video"></i><h2>Online Tuition</h2><p>Live digital classes with flexible scheduling, screen sharing and personal attention.</p><a href="/student-registration">Start online class</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-school"></i><h2>Offline Tuition</h2><p>Structured local coaching and small batches for steady academic performance.</p><a href="/student-registration">Find offline class</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-user-graduate"></i><h2>One-to-One Classes</h2><p>Dedicated tutor attention for faster doubt solving and personalized pace.</p><a href="/student-registration">Book demo</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-users"></i><h2>Group Classes</h2><p>Affordable, collaborative learning for students who enjoy peer motivation.</p><a href="/student-registration">Join group</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-palette"></i><h2>Hobby Classes</h2><p>Creative skill development through art, music, dance and special interest classes.</p><a href="/contact">Ask details</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-comments"></i><h2>Spoken English</h2><p>Grammar, pronunciation, vocabulary and confidence for everyday communication.</p><a href="/student-registration">Improve English</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-computer"></i><h2>Computer Courses</h2><p>Digital literacy, school computer science, office tools and coding foundations.</p><a href="/courses">View courses</a></article></div>
-      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-award"></i><h2>Competitive Exam Prep</h2><p>Focused preparation support for entrance and competitive exams.</p><a href="/student-registration">Get exam tutor</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-house-user"></i><h2>Home Tuition</h2><p>Personalized doorstep learning for school subjects, board exams and concept clarity.</p><a href="/home-tuition">Explore home tuition</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-video"></i><h2>Online Tuition</h2><p>Live digital classes with flexible scheduling, screen sharing and personal attention.</p><a href="/online-tuition">Explore online tuition</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-school"></i><h2>Offline Tuition</h2><p>Structured local coaching and face-to-face classes for steady academic progress.</p><a href="/offline-tuition">Explore offline tuition</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-user-graduate"></i><h2>One-to-One Classes</h2><p>Dedicated tutor attention, custom study plans and personalised academic progress.</p><a href="/one-to-one-tuition">Explore one-to-one tuition</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-users"></i><h2>Group Classes</h2><p>Affordable, collaborative learning in structured, level-appropriate small groups.</p><a href="/group-tuition">Explore group tuition</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-palette"></i><h2>Hobby Classes</h2><p>Creative development through art, music, dance, speaking and special interests.</p><a href="/hobby-classes">Explore hobby classes</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-comments"></i><h2>Spoken English</h2><p>Grammar, pronunciation, vocabulary and confidence for everyday communication.</p><a href="/languages">Explore language classes</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-computer"></i><h2>Computer Courses</h2><p>Practical digital literacy, office tools, internet skills and coding foundations.</p><a href="/computer-courses">Explore computer courses</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-award"></i><h2>Competitive Exam Prep</h2><p>Focused preparation support for entrance and competitive exams.</p><a href="/competitive-exams">Explore competitive exams</a></article></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="service-card tall"><i class="fa-solid fa-graduation-cap"></i><h2>Academic Coaching</h2><p>Holistic support for concepts, study habits, planning, revision and measurable progress.</p><a href="/academic-coaching">Explore academic coaching</a></article></div>
     </div></div></section>
     <!-- Tutor expertise profiles -->
     <section class="tutor-profiles section-padding" aria-labelledby="tutor-profiles-title"><div class="container"><div class="section-title"><span class="section-kicker">Expertise Indicators</span><h2 id="tutor-profiles-title">Tutor capability profiles used during matching</h2><p>Profiles are assessed against the learner’s class, board, subject, goals, mode and location. Specific tutor names, qualifications and availability are shared only for relevant enquiries.</p></div><div class="tutor-profile-grid"><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Academic foundations profile</h3><p>Primary and middle-school learning support</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Class-range experience</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Board familiarity</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Core subject strength</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Home or online availability</li></ul></article><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Board and senior-secondary profile</h3><p>Focused support for Classes 9 to 12</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Subject specialisation</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Board-question familiarity</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Written-answer guidance</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Exam-planning approach</li></ul></article><article class="tutor-profile-card"><div class="tutor-profile-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><span class="expertise-label">Tutor capability profile</span><h3>Language and skills profile</h3><p>Spoken English, computers and coding support</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Practical demonstration</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Learner-level fit</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Relevant course experience</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Digital teaching ability</li></ul></article></div><div class="profile-disclosure"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><p><strong>Transparent matching:</strong> These are capability categories, not fictional individual tutor endorsements. Families should review the proposed tutor’s actual qualifications, experience and demo-class fit before confirming tuition.</p></div></div></section>
@@ -277,7 +346,7 @@
     </section>
     <!-- /Business trust signals -->
     <!-- Cluster architecture -->
-<section class="cluster-architecture section-padding" aria-labelledby="cluster-overview-title"><div class="container"><div class="section-title"><span class="section-kicker">Learning Directory</span><h2 id="cluster-overview-title">Explore tuition by learning need</h2><p>Start with a learning mode, subject, class, exam or service area, then follow the most relevant guidance.</p></div><div class="cluster-overview-grid"><a class="cluster-card" href="/home-tuition"><strong>Home Tuition</strong><span>Personal tutor matching, benefits, selection guidance and local availability.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a><a class="cluster-card" href="/courses"><strong>Subjects</strong><span>Academic subjects, languages, commerce, computer science and coding support.</span></a><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/locations"><strong>Cities</strong><span>Home-tuition service areas in Delhi and online tuition availability across India.</span></a></div></div></section>
+<section class="cluster-architecture section-padding" aria-labelledby="cluster-overview-title"><div class="container"><div class="section-title"><span class="section-kicker">Learning Directory</span><h2 id="cluster-overview-title">Explore tuition by learning need</h2><p>Start with a learning mode, subject, class, exam or service area, then follow the most relevant guidance.</p></div><div class="cluster-overview-grid"><a class="cluster-card" href="/home-tuition"><strong>Home Tuition</strong><span>Personal tutor matching, benefits, selection guidance and local availability.</span></a><a class="cluster-card" href="/online-tuition"><strong>Online Tuition</strong><span>Live online classes, learning setup, tutor selection and effective study routines.</span></a><a class="cluster-card" href="/offline-tuition"><strong>Offline Tuition</strong><span>Face-to-face classes, local tutor matching and structured classroom learning.</span></a><a class="cluster-card" href="/courses"><strong>Subjects</strong><span>Academic subjects, languages, commerce, computer science and coding support.</span></a><a class="cluster-card" href="/classes"><strong>Classes</strong><span>Learning support from primary school through Class 12, organised by stage.</span></a><a class="cluster-card" href="/exam-preparation"><strong>Exams</strong><span>School tests, board examinations and competitive-exam foundation support.</span></a><a class="cluster-card" href="/locations"><strong>Cities</strong><span>Home-tuition service areas in Delhi and online tuition availability across India.</span></a></div></div></section>
 <!-- /Cluster architecture -->
     <!-- AI-ready answer guide -->
     <section class="ai-answer-section section-padding" aria-labelledby="answer-guide-services">
@@ -333,6 +402,22 @@
           <a class="topic-cluster-link" href="/subjects">
             <span>Browse subject tuition options</span>
             <small>Find academic, language, commerce and technology tutors.</small>
+          </a>
+          <a class="topic-cluster-link" href="/how-we-verify-tutors">
+            <span>Review tutor verification standards</span>
+            <small>Understand profile review, conditional checks and shared responsibilities.</small>
+          </a>
+          <a class="topic-cluster-link" href="/tutor-code-of-conduct">
+            <span>Read the Tutor Code of Conduct</span>
+            <small>See the professional standards expected during home and online teaching.</small>
+          </a>
+          <a class="topic-cluster-link" href="/frequently-asked-questions">
+            <span>Compare common service questions</span>
+            <small>Review fees, demos, matching, formats and registration answers.</small>
+          </a>
+          <a class="topic-cluster-link" href="/boards">
+            <span>Compare tuition by school board</span>
+            <small>Explore CBSE, ICSE and State Board learning support.</small>
           </a>
           <a class="topic-cluster-link" href="/locations">
             <span>Check tutor availability by area</span>

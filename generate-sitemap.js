@@ -9,13 +9,22 @@ const mainPages = [
   'services.html',
   'home-tuition.html',
   'online-tuition.html',
+  'offline-tuition.html',
+  'one-to-one-tuition.html',
+  'group-tuition.html',
+  'academic-coaching.html',
+  'computer-courses.html',
+  'hobby-classes.html',
   'courses.html',
   'subjects.html',
+  'languages.html',
   'classes.html',
+  'competitive-exams.html',
   'exam-preparation.html',
   'student-registration.html',
   'tutor-registration.html',
   'contact.html',
+  'cities.html',
   'locations.html',
   'blog.html'
 ];
@@ -34,7 +43,7 @@ function getCanonicalUrl(fileName) {
 function getPageSettings(fileName) {
   if (fileName === 'index.html') return { changefreq: 'weekly', priority: '1.0' };
   if (fileName === 'blog.html') return { changefreq: 'weekly', priority: '0.9' };
-  if (fileName.startsWith('subjects/') || ['home-tuition.html', 'online-tuition.html', 'courses.html', 'subjects.html', 'classes.html', 'exam-preparation.html', 'locations.html'].includes(fileName)) return { changefreq: 'monthly', priority: '0.9' };
+  if (fileName.startsWith('subjects/') || fileName.startsWith('competitive-exams/') || fileName.startsWith('cities/') || ['home-tuition.html', 'online-tuition.html', 'offline-tuition.html', 'one-to-one-tuition.html', 'group-tuition.html', 'academic-coaching.html', 'computer-courses.html', 'hobby-classes.html', 'courses.html', 'subjects.html', 'languages.html', 'classes.html', 'competitive-exams.html', 'exam-preparation.html', 'cities.html', 'locations.html'].includes(fileName)) return { changefreq: 'monthly', priority: '0.9' };
   if (fileName.includes('registration')) return { changefreq: 'monthly', priority: '0.8' };
   if (mainPages.includes(fileName)) return { changefreq: 'monthly', priority: '0.8' };
   return { changefreq: 'monthly', priority: '0.8' };
