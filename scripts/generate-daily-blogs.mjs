@@ -218,27 +218,118 @@ Rules:
 - FAQ answers should be concise and truthful.
 - Keep all content original and suitable for Google indexing.`;
 
-  const output = await callOpenAI({
-    model,
-    input: [
-      {
-        role: "developer",
-        content: "You write production-ready SEO education content for TutorServices. Output strict JSON only."
+  try {
+    const output = await callOpenAI({
+      model,
+      input: [
+        {
+          role: "developer",
+          content: "You write production-ready SEO education content for TutorServices. Output strict JSON only."
+        },
+        {
+          role: "user",
+          content: prompt
+        }
+      ],
+      text: {
+        format: {
+          type: "json_object"
+        }
       },
-      {
-        role: "user",
-        content: prompt
-      }
-    ],
-    text: {
-      format: {
-        type: "json_object"
-      }
-    },
-    max_output_tokens: 18000
-  });
+      max_output_tokens: 18000
+    });
 
-  return parseJson(output);
+    return parseJson(output);
+  } catch (error) {
+    console.warn(`OpenAI generation failed for ${topicInfo.slug}; using local fallback article. ${error.message}`);
+    return generateFallbackArticle(topicInfo);
+  }
+}
+
+function generateFallbackArticle(topicInfo) {
+  const primary = topicInfo.primaryKeyword;
+  const title = `${primary}: A Practical TutorServices Guide`;
+  const longTailKeywords = [
+    `${primary} near me`,
+    `${primary} for school students`,
+    `online support for ${primary.toLowerCase()}`,
+    `home tuition guidance for ${primary.toLowerCase()}`,
+    `private tutor help for ${primary.toLowerCase()}`,
+    `parent guide for ${primary.toLowerCase()}`,
+    `personalised learning for ${primary.toLowerCase()}`
+  ];
+
+  const sectionIdeas = [
+    ["Why this topic matters for students", "Students usually improve when learning support is matched to their class, board, pace and confidence level. A clear plan prevents confusion and helps the student know what to revise, what to practise and when to ask doubts. Parents also get a better picture of daily learning instead of waiting for exam results.", "Good tutoring is not only about finishing chapters. It is about noticing where the student hesitates, explaining the same idea in a simpler way and giving enough practice until the concept becomes comfortable. This is especially useful when school lessons move quickly.", `For many families, ${primary} becomes important when marks, confidence or study discipline need attention. The right tutor can create a calmer routine, reduce last-minute pressure and help the student stay regular.`],
+    ["How TutorServices approaches learning", "TutorServices focuses on requirement-based tutor matching. Parents can share the class, subject, board, preferred mode, timing and expected tuition fee so the search becomes more practical from the beginning.", "The aim is to connect students with suitable tutors for home tuition, online tuition, one-to-one learning or small-group support depending on availability and learning goals. No responsible education service should promise guaranteed marks, but consistent guidance can make preparation more organised.", `When a parent asks for ${primary}, the important details are the student's current level, weak areas, examination timeline and preferred communication style. These details help create a better match.`],
+    ["Signs a student may need extra support", "Some students need support because they have missed earlier concepts. Others understand theory but struggle with practice, writing answers, time management or regular revision. A tutor can identify these gaps through normal lessons and simple assessments.", "Parents may notice low confidence, incomplete homework, careless mistakes, difficulty concentrating, fear of tests or reluctance to ask questions in class. These signs do not mean the child is weak. They simply show that the student may need a different teaching pace.", `In such situations, ${primary} can help by giving the student a safe space to ask basic questions without embarrassment. Thoda patience and regular practice can change the learning experience.`],
+    ["Home tuition and online tuition options", "Home tuition is useful when the student learns better through face-to-face interaction, needs a fixed study routine or benefits from direct supervision. It also helps younger students who may need more structure during lessons.", "Online tuition is useful when families want flexibility, access to tutors beyond their immediate location or a convenient option without travel. With the right tutor, online classes can still be interactive through screen sharing, digital notes and regular doubt-solving.", `TutorServices can help parents explore both options for ${primary}. The better choice depends on the student's age, attention span, subject difficulty, schedule and comfort with technology.`],
+    ["What parents should discuss before starting", "Before finalising tuition, parents should clearly explain the student's class, board, subjects, school performance, homework load and target areas. This avoids mismatch and helps the tutor prepare suitable lessons.", "It is also useful to discuss timing, mode of learning, expected tuition fees, frequency of classes and whether the student needs regular study support or exam-focused preparation. Clear expectations make the learning relationship smoother.", `For ${primary}, parents should ask how the tutor will revise concepts, give practice work, track progress and communicate updates. A transparent discussion saves time later.`],
+    ["A practical weekly learning plan", "A good weekly plan usually includes concept explanation, guided examples, independent practice, homework review, doubt clearing and short revision. The plan should be simple enough to follow and flexible enough to adjust when the student needs more time.", "For exam-oriented students, the tutor may add chapter-wise tests, sample questions, timed practice and revision notes. For younger students, the plan may include activities, reading practice, worksheets and parent feedback.", `The best plan for ${primary} is the one the student can actually follow. Overloading a child with too much work often creates stress, while small consistent tasks build confidence.`],
+    ["How progress can be measured", "Progress should not be measured only through marks. Better homework completion, fewer repeated mistakes, improved confidence, stronger explanations and more regular study habits are also important signs.", "Parents can review progress every few weeks by checking notebooks, test scores, tutor feedback and the student's own comfort level. If a method is not working, it should be adjusted early instead of waiting for exams.", `In ${primary}, progress may appear slowly at first. Once basics become clear, students usually solve questions faster and feel less afraid of the subject.`],
+    ["Common mistakes to avoid", "One common mistake is choosing a tutor only by price without checking subject fit, communication style and availability. Another mistake is expecting instant improvement without regular practice from the student.", "Parents should also avoid changing tutors too quickly unless there is a genuine mismatch. Learning needs some time, especially when the student has older gaps. At the same time, feedback should be honest if lessons are not helping.", `For ${primary}, the best results come from teamwork between student, parent and tutor. Regular classes, clear communication and realistic goals matter more than shortcuts.`],
+    ["Why a personalised approach works better", "Every student has a different learning speed. Some need visual examples, some need more writing practice, some need repeated revision and some need motivation. A personalised approach respects these differences.", "This is where private tuition can feel more comfortable than a large batch. The tutor can slow down, repeat, ask questions, check understanding and modify examples according to the student's class level.", `For families searching for ${primary}, personalised learning helps turn a general requirement into a clear plan. It makes the tuition more focused, practical and student-friendly.`],
+    ["How to get started with TutorServices", "Parents can begin by sharing the student's details and learning requirements through TutorServices. The more specific the enquiry, the easier it becomes to understand what type of tutor may fit the student.", "Useful details include class, board, subject, mode, location if home tuition is needed, preferred time, expected fee and current academic concern. This helps avoid unnecessary back-and-forth.", `You can explore services at https://www.tutorservices.in/services.html, learn about TutorServices at https://www.tutorservices.in/about.html, or contact the team at https://www.tutorservices.in/contact.html for ${primary} support.`]
+  ];
+
+  return {
+    seoTitle: title,
+    metaTitle: `${primary} | TutorServices`,
+    metaDescription: `Looking for ${primary}? Learn how TutorServices helps parents choose suitable home and online tutors with practical, personalised support.`,
+    h1: title,
+    introParagraphs: [
+      `${primary} is a common search for parents who want dependable academic support without confusing promises or one-size-fits-all coaching. Students learn better when lessons match their class, board, subject level and daily routine.`,
+      `TutorServices helps families explore tutor options for home tuition, online tuition, one-to-one learning and related academic support. The focus is simple: understand the student's need, match the requirement carefully and support regular learning.`,
+      `This guide explains how parents can think about ${primary}, what to discuss before hiring a tutor and how to build a study plan that feels realistic for Indian school students. The language is simple, practical and parent-friendly.`
+    ],
+    quickAnswer: {
+      heading: `Quick answer: what is the best way to use ${primary}?`,
+      paragraphs: [
+        `The best way to use ${primary} is to first identify the student's exact difficulty, then choose a tutor who can teach at the right pace and provide regular practice. Parents should discuss class, board, subject, timings and expected tuition fee before classes begin.`,
+        `A tutor cannot guarantee marks, but a clear learning plan can improve consistency, confidence and exam readiness. For many students, that steady support makes studying less stressful.`
+      ]
+    },
+    sections: sectionIdeas.map(([h2, first, second, third]) => ({
+      h2,
+      paragraphs: [first, second, third],
+      h3Blocks: [
+        {
+          h3: "Parent checklist",
+          paragraphs: [
+            "Check the student's current level, preferred learning mode, weekly availability and comfort with the tutor's teaching style. Keep goals specific, such as improving chapter understanding, completing homework regularly or preparing for upcoming tests."
+          ]
+        }
+      ]
+    })),
+    comparisonTable: {
+      heading: "Home tuition, online tuition and group learning",
+      headers: ["Learning option", "Best for", "What parents should check"],
+      rows: [
+        ["Home tuition", "Students who need face-to-face guidance and routine", "Tutor availability, travel area, timing and safety expectations"],
+        ["Online tuition", "Students who want flexible classes from home", "Internet quality, interaction style and digital practice method"],
+        ["One-to-one tuition", "Students needing personal attention and custom pacing", "Learning plan, feedback process and progress tracking"],
+        ["Group tuition", "Students who learn well with peers and want affordability", "Batch size, level matching and doubt-solving time"]
+      ]
+    },
+    faqs: [
+      { question: `How do I start with ${primary}?`, answer: "Share the student's class, board, subject requirement, preferred mode, timing and expected fee with TutorServices so the requirement can be understood clearly." },
+      { question: "Can I choose between home tuition and online tuition?", answer: "Yes. Families can explore home tuition or online tuition depending on availability, location, schedule and the student's comfort." },
+      { question: "Does TutorServices guarantee marks?", answer: "No. TutorServices helps connect students with suitable tutors, but marks depend on regular study, practice, attendance and exam performance." },
+      { question: "Can parents discuss expected tuition fees?", answer: "Yes. Parents can mention expected tuition fees while sharing requirements so tutor matching can be more practical." },
+      { question: "Is one-to-one learning available?", answer: "One-to-one tuition may be available depending on the subject, location, mode and tutor availability." },
+      { question: "Are online classes useful for school students?", answer: "Online classes can be useful when the tutor keeps lessons interactive, gives practice work and reviews doubts regularly." },
+      { question: "How often should tuition classes happen?", answer: "Frequency depends on the student's class, subject difficulty and goals. Many students benefit from two to four sessions per week." },
+      { question: "Can tuition help with homework?", answer: "Yes. Tutors can support homework, revision and concept clarity, while also encouraging the student to work independently." },
+      { question: "What should I check before finalising a tutor?", answer: "Check subject knowledge, teaching style, communication, schedule fit and whether the student feels comfortable asking doubts." },
+      { question: "How can I contact TutorServices?", answer: "You can use the Contact page at https://www.tutorservices.in/contact.html to share your tuition requirement." }
+    ],
+    conclusion: [
+      `${primary} works best when the focus is clear learning, not pressure. A student-friendly tutor can make difficult topics easier, create regular study habits and help parents understand progress more clearly.`,
+      `If you want support for school studies, homework, exam preparation or subject-wise learning, visit https://www.tutorservices.in/services.html, read more at https://www.tutorservices.in/about.html or contact https://www.tutorservices.in/contact.html.`
+    ],
+    longTailKeywords,
+    imageAlt: `${primary} guide by TutorServices`
+  };
 }
 
 function createSvgImage(topicInfo, article) {
