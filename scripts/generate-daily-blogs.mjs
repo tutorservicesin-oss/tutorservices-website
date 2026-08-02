@@ -160,6 +160,15 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function hashString(value) {
+  let hash = 0;
+  for (const character of String(value)) {
+    hash = ((hash << 5) - hash) + character.charCodeAt(0);
+    hash |= 0;
+  }
+  return hash;
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
