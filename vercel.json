@@ -8,5 +8,11 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/trigger-daily-blogs",
+      "schedule": "30 3 * * *"
+    }
   ]
 }
