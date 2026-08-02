@@ -12,11 +12,40 @@ const displayDate = today.toLocaleDateString("en-IN", {
 });
 
 const apiKey = process.env.OPENAI_API_KEY;
-if (!apiKey) {
-  throw new Error("OPENAI_API_KEY is missing.");
-}
-
 const model = process.env.OPENAI_DAILY_BLOG_MODEL || "gpt-5";
+
+const imagePool = [
+  {
+    url: "https://images.unsplash.com/photo-1758612898304-1a6bb546ac44?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600",
+    credit: "Unsplash / Vitaly Gariev",
+    alt: "Student learning online with a laptop at home"
+  },
+  {
+    url: "https://images.pexels.com/photos/8457297/pexels-photo-8457297.jpeg?cs=srgb&fm=jpg&w=1600",
+    credit: "Pexels / Norma Mortenson",
+    alt: "Children studying together with notebooks and a laptop"
+  },
+  {
+    url: "https://images.pexels.com/photos/6238038/pexels-photo-6238038.jpeg?cs=srgb&fm=jpg&w=1600",
+    credit: "Pexels / Monstera Production",
+    alt: "Students working together on mathematics during group study"
+  },
+  {
+    url: "https://images.pexels.com/photos/6238046/pexels-photo-6238046.jpeg?cs=srgb&fm=jpg&w=1600",
+    credit: "Pexels / Monstera Production",
+    alt: "Students studying together in a bright classroom"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600",
+    credit: "Unsplash / Kenny Eliason",
+    alt: "Teacher helping students in a classroom"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600",
+    credit: "Unsplash / Kimberly Farmer",
+    alt: "Books and learning materials for school study"
+  }
+];
 
 const topicPool = [
   {
@@ -218,6 +247,11 @@ Rules:
 - FAQ answers should be concise and truthful.
 - Keep all content original and suitable for Google indexing.`;
 
+  if (!apiKey) {
+    console.warn(`OPENAI_API_KEY is not configured; using local fallback article for ${topicInfo.slug}.`);
+    return generateFallbackArticle(topicInfo);
+  }
+
   try {
     const output = await callOpenAI({
       model,
@@ -332,49 +366,28 @@ function generateFallbackArticle(topicInfo) {
   };
 }
 
-function createSvgImage(topicInfo, article) {
-  const imageFileName = `${topicInfo.slug}-study-guide.svg`;
+async function createBlogImage(topicInfo, article) {
+  const imageFileName = `${topicInfo.slug}-study-guide.jpg`;
   const imagePath = path.join(root, "assets", "images", imageFileName);
-  const title = escapeHtml(article.h1 || topicInfo.topic);
-  const category = escapeHtml(topicInfo.category);
-  const primary = escapeHtml(topicInfo.primaryKeyword);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
-  <title id="title">${title}</title>
-  <desc id="desc">Original TutorServices educational blog image for ${primary}</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#050816"/>
-      <stop offset="52%" stop-color="#0B1228"/>
-      <stop offset="100%" stop-color="#101A35"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" x2="1">
-      <stop offset="0%" stop-color="#00E5FF"/>
-      <stop offset="48%" stop-color="#7B2FF7"/>
-      <stop offset="100%" stop-color="#FF0080"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="750" fill="url(#bg)"/>
-  <circle cx="1040" cy="130" r="120" fill="#00E5FF" opacity="0.08"/>
-  <circle cx="150" cy="640" r="180" fill="#FF0080" opacity="0.08"/>
-  <rect x="78" y="82" width="1044" height="586" rx="34" fill="#101A35" stroke="rgba(255,255,255,0.18)" stroke-width="3"/>
-  <rect x="118" y="122" width="260" height="58" rx="29" fill="url(#accent)"/>
-  <text x="248" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">${category}</text>
-  <text x="118" y="265" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#FFFFFF">TutorServices</text>
-  <text x="118" y="326" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#00E5FF">${primary}</text>
-  <foreignObject x="118" y="370" width="570" height="160">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; color: #CBD5E1; font-size: 28px; line-height: 1.35; font-weight: 600;">${title}</div>
-  </foreignObject>
-  <g transform="translate(760 255)">
-    <rect x="0" y="0" width="270" height="210" rx="24" fill="#0B1228" stroke="#00E5FF" stroke-opacity="0.42" stroke-width="3"/>
-    <rect x="34" y="42" width="202" height="22" rx="11" fill="#00E5FF" opacity="0.95"/>
-    <rect x="34" y="88" width="150" height="18" rx="9" fill="#CBD5E1" opacity="0.55"/>
-    <rect x="34" y="128" width="188" height="18" rx="9" fill="#CBD5E1" opacity="0.35"/>
-    <circle cx="226" cy="164" r="34" fill="#FF6B00"/>
-    <path d="M210 164l12 12 24-31" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <text x="118" y="610" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#94A3B8">Learn Smarter, Achieve Faster</text>
-</svg>`;
-  fs.writeFileSync(imagePath, svg, "utf8");
+  const imageChoice = imagePool[Math.abs(hashString(topicInfo.slug)) % imagePool.length];
+
+  try {
+    const response = await fetch(imageChoice.url, {
+      headers: {
+        "User-Agent": "TutorServices daily blog automation"
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`Image download failed ${response.status}`);
+    }
+    const buffer = Buffer.from(await response.arrayBuffer());
+    fs.writeFileSync(imagePath, buffer);
+    article.imageAlt = article.imageAlt || `${imageChoice.alt} for TutorServices ${topicInfo.category}`;
+  } catch (error) {
+    console.warn(`Image download failed for ${topicInfo.slug}; using existing fallback image. ${error.message}`);
+    return "/assets/images/parent-student-tutor-study-plan.jpg";
+  }
+
   return `/assets/images/${imageFileName}`;
 }
 
@@ -670,7 +683,7 @@ const generated = [];
 
 for (const topicInfo of selectedTopics) {
   const article = await generateArticle(topicInfo);
-  const imageUrl = createSvgImage(topicInfo, article);
+  const imageUrl = await createBlogImage(topicInfo, article);
   const html = renderArticleHtml(topicInfo, article, imageUrl);
   const filePath = path.join(root, `${topicInfo.slug}.html`);
   fs.writeFileSync(filePath, html, "utf8");

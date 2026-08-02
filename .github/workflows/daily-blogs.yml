@@ -1,0 +1,45 @@
+name: Daily TutorServices Blogs
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-tutorservices-blogs
+  cancel-in-progress: false
+
+jobs:
+  generate-blogs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate two daily SEO blogs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_DAILY_BLOG_MODEL: gpt-5
+        run: node scripts/generate-daily-blogs.mjs
+
+      - name: Commit and push blog updates
+        run: |
+          git config user.name "TutorServices Blog Bot"
+          git config user.email "tutorservices.in@gmail.com"
+          git add blog.html sitemap.xml *.html assets/images/*.jpg
+          if git diff --cached --quiet; then
+            echo "No new blog changes to commit."
+            exit 0
+          fi
+          git commit -m "Add daily TutorServices SEO blogs"
+          git push
