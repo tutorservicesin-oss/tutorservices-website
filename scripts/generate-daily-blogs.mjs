@@ -3,7 +3,12 @@ import path from "node:path";
 
 const root = process.cwd();
 const today = new Date();
-const isoDate = today.toISOString().slice(0, 10);
+const isoDate = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Kolkata",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+}).format(today);
 const displayDate = today.toLocaleDateString("en-IN", {
   day: "numeric",
   month: "long",
@@ -13,6 +18,18 @@ const displayDate = today.toLocaleDateString("en-IN", {
 
 const apiKey = process.env.OPENAI_API_KEY;
 const model = process.env.OPENAI_DAILY_BLOG_MODEL || "gpt-5";
+
+const todayBlogCount = fs.readdirSync(root)
+  .filter((fileName) => fileName.endsWith(".html"))
+  .filter((fileName) => {
+    const html = fs.readFileSync(path.join(root, fileName), "utf8");
+    return html.includes('"@type": "BlogPosting"') && html.includes(`"datePublished": "${isoDate}"`);
+  }).length;
+
+if (todayBlogCount >= 2) {
+  console.log(`Daily blog automation skipped: ${todayBlogCount} blogs already published for ${isoDate}.`);
+  process.exit(0);
+}
 
 const imagePool = [
   {

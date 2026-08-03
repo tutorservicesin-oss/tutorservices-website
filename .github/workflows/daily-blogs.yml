@@ -3,6 +3,7 @@ name: Daily TutorServices Blogs
 on:
   schedule:
     - cron: "30 3 * * *"
+    - cron: "30 4 * * *"
   workflow_dispatch:
 
 permissions:
