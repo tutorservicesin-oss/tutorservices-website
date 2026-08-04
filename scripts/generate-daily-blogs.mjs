@@ -148,6 +148,356 @@ const topicPool = [
     slug: "online-tuition-setup-checklist",
     category: "Online Tuition",
     intent: "Practical checklist"
+  },
+  {
+    topic: "How to Choose Home Tuition for Class 6 to 8 Students",
+    primaryKeyword: "Home Tuition for Class 6 to 8",
+    slug: "home-tuition-for-class-6-to-8-students",
+    category: "Classes",
+    intent: "Commercial parent guide"
+  },
+  {
+    topic: "Why Class 9 Students Need Strong Maths and Science Basics",
+    primaryKeyword: "Class 9 Maths and Science Tuition",
+    slug: "class-9-maths-and-science-tuition-guide",
+    category: "Class 9 Tuition",
+    intent: "Informational class guide"
+  },
+  {
+    topic: "Class 12 Science Tuition Planning Guide for Parents",
+    primaryKeyword: "Class 12 Science Tuition",
+    slug: "class-12-science-tuition-planning-guide",
+    category: "Class 12 Tuition",
+    intent: "Commercial class guide"
+  },
+  {
+    topic: "How to Prepare for CBSE Board Exams with Home Tuition",
+    primaryKeyword: "CBSE Board Exam Home Tuition",
+    slug: "cbse-board-exam-home-tuition-guide",
+    category: "CBSE Tuition",
+    intent: "Board exam guide"
+  },
+  {
+    topic: "ICSE Tuition Guide for English, Science and Mathematics",
+    primaryKeyword: "ICSE Tuition Guide",
+    slug: "icse-tuition-guide-english-science-mathematics",
+    category: "ICSE Tuition",
+    intent: "Board-specific guide"
+  },
+  {
+    topic: "State Board Tuition: How Parents Can Choose the Right Tutor",
+    primaryKeyword: "State Board Tuition",
+    slug: "state-board-tuition-parent-guide",
+    category: "State Board Tuition",
+    intent: "Board-specific guide"
+  },
+  {
+    topic: "Home Tuition in Delhi: Parent Checklist Before Starting",
+    primaryKeyword: "Home Tuition in Delhi",
+    slug: "home-tuition-in-delhi-parent-checklist",
+    category: "Delhi Home Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Online Tuition Across India: What Students Should Expect",
+    primaryKeyword: "Online Tuition Across India",
+    slug: "online-tuition-across-india-student-guide",
+    category: "Online Tuition",
+    intent: "Service guide"
+  },
+  {
+    topic: "How One-to-One Tuition Improves Doubt Solving",
+    primaryKeyword: "One-to-One Tuition for Doubt Solving",
+    slug: "one-to-one-tuition-for-doubt-solving",
+    category: "One-to-One Tuition",
+    intent: "Commercial service guide"
+  },
+  {
+    topic: "Small Group Tuition: When It Works Better Than Private Classes",
+    primaryKeyword: "Small Group Tuition",
+    slug: "small-group-tuition-benefits-guide",
+    category: "Group Tuition",
+    intent: "Comparison guide"
+  },
+  {
+    topic: "Academic Coaching vs Tuition: What Parents Should Know",
+    primaryKeyword: "Academic Coaching vs Tuition",
+    slug: "academic-coaching-vs-tuition-parent-guide",
+    category: "Academic Coaching",
+    intent: "Comparison guide"
+  },
+  {
+    topic: "How to Build Better Study Habits with a Private Tutor",
+    primaryKeyword: "Private Tutor for Study Habits",
+    slug: "private-tutor-for-better-study-habits",
+    category: "Study Skills",
+    intent: "Informational parent guide"
+  },
+  {
+    topic: "Maths Tuition for Students Who Fear Numbers",
+    primaryKeyword: "Maths Tuition for Weak Students",
+    slug: "maths-tuition-for-students-who-fear-numbers",
+    category: "Maths Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Science Tuition for Concept Clarity and Better Answers",
+    primaryKeyword: "Science Tuition for Concept Clarity",
+    slug: "science-tuition-for-concept-clarity",
+    category: "Science Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "English Tuition for Reading, Writing and Grammar Confidence",
+    primaryKeyword: "English Tuition for Students",
+    slug: "english-tuition-reading-writing-grammar-confidence",
+    category: "English Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Physics Tuition: How to Improve Numericals and Concepts",
+    primaryKeyword: "Physics Tuition for Numericals",
+    slug: "physics-tuition-for-numericals-and-concepts",
+    category: "Physics Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Chemistry Tuition: Organic, Inorganic and Physical Chemistry Plan",
+    primaryKeyword: "Chemistry Tuition Study Plan",
+    slug: "chemistry-tuition-organic-inorganic-physical-plan",
+    category: "Chemistry Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Biology Tuition for Diagrams, Terms and NCERT Revision",
+    primaryKeyword: "Biology Tuition for Students",
+    slug: "biology-tuition-diagrams-terms-ncert-revision",
+    category: "Biology Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Computer Science Tuition for School Students",
+    primaryKeyword: "Computer Science Tuition",
+    slug: "computer-science-tuition-for-school-students",
+    category: "Computer Science Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Coding for Kids: How Parents Can Start Safely",
+    primaryKeyword: "Coding for Kids Classes",
+    slug: "coding-for-kids-parent-starting-guide",
+    category: "Coding for Kids",
+    intent: "Commercial parent guide"
+  },
+  {
+    topic: "JEE Foundation Classes for Class 9 and 10 Students",
+    primaryKeyword: "JEE Foundation Classes",
+    slug: "jee-foundation-classes-class-9-and-10-guide",
+    category: "Competitive Exams",
+    intent: "Foundation exam guide"
+  },
+  {
+    topic: "NEET Foundation Preparation for School Students",
+    primaryKeyword: "NEET Foundation Preparation",
+    slug: "neet-foundation-preparation-school-students",
+    category: "Competitive Exams",
+    intent: "Foundation exam guide"
+  },
+  {
+    topic: "CUET Preparation: How Class 12 Students Can Plan Early",
+    primaryKeyword: "CUET Preparation",
+    slug: "cuet-preparation-class-12-planning-guide",
+    category: "Competitive Exams",
+    intent: "Exam preparation guide"
+  },
+  {
+    topic: "Olympiad Preparation for School Students: Parent Guide",
+    primaryKeyword: "Olympiad Preparation",
+    slug: "olympiad-preparation-for-school-students-parent-guide",
+    category: "Competitive Exams",
+    intent: "Exam preparation guide"
+  },
+  {
+    topic: "Spoken English Classes for Students and Beginners",
+    primaryKeyword: "Spoken English Classes",
+    slug: "spoken-english-classes-for-students-and-beginners",
+    category: "Language Classes",
+    intent: "Language learning guide"
+  },
+  {
+    topic: "English Grammar Classes: A Practical Learning Plan",
+    primaryKeyword: "English Grammar Classes",
+    slug: "english-grammar-classes-practical-learning-plan",
+    category: "Language Classes",
+    intent: "Language learning guide"
+  },
+  {
+    topic: "How Tutor Verification Helps Parents Choose Confidently",
+    primaryKeyword: "Tutor Verification Process",
+    slug: "tutor-verification-process-parent-confidence-guide",
+    category: "Trust",
+    intent: "EEAT trust guide"
+  },
+  {
+    topic: "Questions Parents Should Ask Before Hiring a Tutor",
+    primaryKeyword: "Questions Before Hiring a Tutor",
+    slug: "questions-parents-should-ask-before-hiring-tutor",
+    category: "Parent Guide",
+    intent: "Trust and safety guide"
+  },
+  {
+    topic: "How to Set Expected Tuition Fees Before Starting Classes",
+    primaryKeyword: "Expected Tuition Fees",
+    slug: "expected-tuition-fees-before-starting-classes",
+    category: "Tuition Fees",
+    intent: "Commercial pricing guide"
+  },
+  {
+    topic: "Home Tutor Near Me: How Local Tutor Matching Works",
+    primaryKeyword: "Home Tutor Near Me",
+    slug: "home-tutor-near-me-local-matching-guide",
+    category: "Home Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "How Parents Can Support Children During Online Tuition",
+    primaryKeyword: "Online Tuition Support for Parents",
+    slug: "online-tuition-support-for-parents",
+    category: "Online Tuition",
+    intent: "Practical parent guide"
+  },
+  {
+    topic: "Private Tutor for Primary Students: What Really Matters",
+    primaryKeyword: "Private Tutor for Primary Students",
+    slug: "private-tutor-for-primary-students-guide",
+    category: "Primary Tuition",
+    intent: "Commercial parent guide"
+  },
+  {
+    topic: "Middle School Tuition Guide for Classes 6, 7 and 8",
+    primaryKeyword: "Middle School Tuition",
+    slug: "middle-school-tuition-classes-6-7-8-guide",
+    category: "Middle School Tuition",
+    intent: "Class cluster guide"
+  },
+  {
+    topic: "Class 10 Tuition: How to Balance School, Revision and Tests",
+    primaryKeyword: "Class 10 Tuition",
+    slug: "class-10-tuition-school-revision-tests-guide",
+    category: "Class 10 Tuition",
+    intent: "Class cluster guide"
+  },
+  {
+    topic: "Class 11 Tuition: How to Adjust to Senior Secondary Subjects",
+    primaryKeyword: "Class 11 Tuition",
+    slug: "class-11-tuition-senior-secondary-adjustment-guide",
+    category: "Class 11 Tuition",
+    intent: "Class cluster guide"
+  },
+  {
+    topic: "Class 12 Tuition: Board Marks and Entrance Preparation Balance",
+    primaryKeyword: "Class 12 Tuition",
+    slug: "class-12-tuition-board-entrance-balance",
+    category: "Class 12 Tuition",
+    intent: "Class cluster guide"
+  },
+  {
+    topic: "Home Tuition vs Offline Coaching: Which Is Better for Your Child",
+    primaryKeyword: "Home Tuition vs Offline Coaching",
+    slug: "home-tuition-vs-offline-coaching-parent-guide",
+    category: "Tuition Guide",
+    intent: "Comparison guide"
+  },
+  {
+    topic: "How Flexible Timings Help Students Learn Consistently",
+    primaryKeyword: "Flexible Tuition Timings",
+    slug: "flexible-tuition-timings-for-students",
+    category: "Tuition Guide",
+    intent: "Service benefit guide"
+  },
+  {
+    topic: "How Regular Assessments Improve Tuition Results",
+    primaryKeyword: "Regular Tuition Assessments",
+    slug: "regular-tuition-assessments-improve-learning",
+    category: "Study Skills",
+    intent: "Learning process guide"
+  },
+  {
+    topic: "How to Know If Your Child Needs Extra Academic Support",
+    primaryKeyword: "Extra Academic Support",
+    slug: "how-to-know-child-needs-extra-academic-support",
+    category: "Academic Coaching",
+    intent: "Parent decision guide"
+  },
+  {
+    topic: "Home Tuition for South Delhi Students: Parent Guide",
+    primaryKeyword: "Home Tuition in South Delhi",
+    slug: "home-tuition-south-delhi-parent-guide",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Home Tuition in Dwarka: How Families Can Choose Tutors",
+    primaryKeyword: "Home Tuition in Dwarka",
+    slug: "home-tuition-dwarka-family-guide",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Home Tuition in Rohini: What Parents Should Check",
+    primaryKeyword: "Home Tuition in Rohini",
+    slug: "home-tuition-rohini-parent-checklist",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Home Tuition in Connaught Place and Central Delhi",
+    primaryKeyword: "Home Tuition in Connaught Place",
+    slug: "home-tuition-connaught-place-central-delhi-guide",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "How to Compare Home Tutors Without Getting Confused",
+    primaryKeyword: "Compare Home Tutors",
+    slug: "how-to-compare-home-tutors-parent-guide",
+    category: "Parent Guide",
+    intent: "Decision guide"
+  },
+  {
+    topic: "How Demo Classes Help Parents Understand Tutor Fit",
+    primaryKeyword: "Demo Class for Tuition",
+    slug: "demo-class-for-tuition-tutor-fit-guide",
+    category: "Parent Guide",
+    intent: "Decision guide"
+  },
+  {
+    topic: "How Progress Reports Help Parents Track Learning",
+    primaryKeyword: "Tuition Progress Reports",
+    slug: "tuition-progress-reports-parent-guide",
+    category: "Parent Guide",
+    intent: "Learning process guide"
+  },
+  {
+    topic: "How Homework Support Builds Better Study Discipline",
+    primaryKeyword: "Homework Support Tuition",
+    slug: "homework-support-tuition-study-discipline",
+    category: "Academic Support",
+    intent: "Informational guide"
+  },
+  {
+    topic: "How Revision Planning Helps Students Before Exams",
+    primaryKeyword: "Revision Planning for Students",
+    slug: "revision-planning-for-students-before-exams",
+    category: "Exam Preparation",
+    intent: "Study skills guide"
+  },
+  {
+    topic: "How to Choose Tuition Mode: Home, Online or Group",
+    primaryKeyword: "Choose Tuition Mode",
+    slug: "choose-tuition-mode-home-online-group",
+    category: "Tuition Guide",
+    intent: "Comparison guide"
   }
 ];
 
@@ -159,7 +509,8 @@ const existingHtml = new Set(
 
 const availableTopics = topicPool.filter((item) => !existingHtml.has(item.slug));
 if (availableTopics.length < 2) {
-  throw new Error("Not enough unused blog topics remain in the topic pool.");
+  console.log(`Daily blog automation skipped: only ${availableTopics.length} unused blog topic remains in the topic pool.`);
+  process.exit(0);
 }
 
 const daySeed = Math.floor(today.getTime() / 86400000);
