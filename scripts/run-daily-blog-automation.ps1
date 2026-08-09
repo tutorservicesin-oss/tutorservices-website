@@ -49,6 +49,29 @@ function Import-EnvFile {
   }
 }
 
+function Invoke-LoggedNative {
+  param(
+    [Parameter(Mandatory = $true)][string]$FilePath,
+    [Parameter(ValueFromRemainingArguments = $true)][string[]]$Arguments
+  )
+
+  $previousErrorActionPreference = $ErrorActionPreference
+  $ErrorActionPreference = "Continue"
+  try {
+    & $FilePath @Arguments 2>&1 | ForEach-Object {
+      $_.ToString() | Tee-Object -FilePath $LogFile -Append
+    }
+    $exitCode = $LASTEXITCODE
+  }
+  finally {
+    $ErrorActionPreference = $previousErrorActionPreference
+  }
+
+  if ($exitCode -ne 0) {
+    throw "Command failed with exit code $exitCode`: $FilePath $($Arguments -join ' ')"
+  }
+}
+
 Write-Log "Starting TutorServices daily blog automation."
 Import-EnvFile -Path $EnvFile
 
@@ -73,20 +96,20 @@ if (-not (Test-Path (Join-Path $CloneRoot ".git"))) {
   if (Test-Path $CloneRoot) {
     Remove-Item -LiteralPath $CloneRoot -Recurse -Force
   }
-  & $Git clone $RepoUrl $CloneRoot 2>&1 | Tee-Object -FilePath $LogFile -Append
+  Invoke-LoggedNative $Git clone $RepoUrl $CloneRoot
 }
 
 Push-Location $CloneRoot
 try {
   Write-Log "Updating local clone."
-  & $Git checkout $Branch 2>&1 | Tee-Object -FilePath $LogFile -Append
-  & $Git pull origin $Branch 2>&1 | Tee-Object -FilePath $LogFile -Append
+  Invoke-LoggedNative $Git checkout $Branch
+  Invoke-LoggedNative $Git pull origin $Branch
 
   New-Item -ItemType Directory -Force -Path (Join-Path $CloneRoot "scripts") | Out-Null
   Copy-Item -LiteralPath (Join-Path $PSScriptRoot "generate-daily-blogs.mjs") -Destination (Join-Path $CloneRoot "scripts\generate-daily-blogs.mjs") -Force
 
   Write-Log "Generating two SEO blogs."
-  & $NodePath "scripts\generate-daily-blogs.mjs" 2>&1 | Tee-Object -FilePath $LogFile -Append
+  Invoke-LoggedNative $NodePath "scripts\generate-daily-blogs.mjs"
 
   $status = & $Git status --porcelain
   if (-not $status) {
@@ -96,9 +119,9 @@ try {
 
   & $Git config user.name "Meenakshi Sharma"
   & $Git config user.email "tutorservices.in@gmail.com"
-  & $Git add blog.html sitemap.xml scripts/generate-daily-blogs.mjs assets/images/*.svg *.html
-  & $Git commit -m "Add daily TutorServices SEO blogs for $Today" 2>&1 | Tee-Object -FilePath $LogFile -Append
-  & $Git push origin $Branch 2>&1 | Tee-Object -FilePath $LogFile -Append
+  & $Git add blog.html sitemap.xml scripts/generate-daily-blogs.mjs assets/images/*.svg assets/images/*.jpg *.html
+  Invoke-LoggedNative $Git commit -m "Add daily TutorServices SEO blogs for $Today"
+  Invoke-LoggedNative $Git push origin $Branch
   Write-Log "Daily blog automation completed and pushed."
 }
 finally {
