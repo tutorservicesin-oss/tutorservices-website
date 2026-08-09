@@ -12,7 +12,7 @@
   "crons": [
     {
       "path": "/api/trigger-daily-blogs",
-      "schedule": "30 3 * * *"
+      "schedule": "30 21 * * *"
     }
   ]
 }
