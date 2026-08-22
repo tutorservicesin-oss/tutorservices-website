@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://www.tutorservices.in/blog</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -687,6 +687,18 @@
   <url>
     <loc>https://www.tutorservices.in/choose-tuition-mode-home-online-group</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/demo-class-for-tuition-tutor-fit-guide</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/cuet-preparation-class-12-planning-guide</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
