@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://www.tutorservices.in/blog</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -735,6 +735,18 @@
   <url>
     <loc>https://www.tutorservices.in/class-9-maths-and-science-tuition-guide</loc>
     <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/home-tuition-vs-offline-coaching-parent-guide</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/home-tuition-connaught-place-central-delhi-guide</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
