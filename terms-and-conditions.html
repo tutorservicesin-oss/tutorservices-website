@@ -34,6 +34,55 @@
   <link rel="stylesheet" href="/layout.min.css">
   <link rel="stylesheet" href="/style.min.css?v=20260721-neon3">
   <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+  <style>
+    .legal-page{background:linear-gradient(180deg,rgba(5,8,22,.98),rgba(8,13,32,.96));padding-top:118px;color:rgba(255,255,255,.84)}
+    .legal-shell{max-width:1180px;margin:0 auto;padding:0 1.25rem 5rem}
+    .legal-header{max-width:860px;padding:4.25rem 0 2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+    .legal-label{display:inline-flex;align-items:center;gap:.55rem;color:var(--primary);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:1rem}
+    .legal-header h1{font-size:clamp(2.35rem,5vw,4.25rem);line-height:1.04;margin:0 0 1rem;color:#fff}
+    .legal-updated{display:inline-flex;margin:.35rem 0 1.25rem;padding:.55rem .9rem;border:1px solid rgba(0,229,255,.24);border-radius:999px;background:rgba(0,229,255,.08);color:#fff;font-weight:700}
+    .legal-intro{font-size:1.08rem;line-height:1.8;max-width:780px;color:rgba(255,255,255,.78)}
+    .legal-grid{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:2rem;align-items:start;margin-top:2rem}
+    .legal-toc{position:sticky;top:104px;border:1px solid rgba(255,255,255,.12);border-radius:1.25rem;background:rgba(255,255,255,.045);padding:1.1rem;box-shadow:0 16px 38px rgba(0,0,0,.18)}
+    .legal-toc h2{font-size:1rem;color:#fff;margin:0 0 .85rem}
+    .legal-toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+    .legal-toc a{display:block;padding:.55rem .65rem;border-radius:.7rem;color:rgba(255,255,255,.76);font-size:.92rem;line-height:1.35;text-decoration:none}
+    .legal-toc a:hover,.legal-toc a:focus{background:rgba(0,229,255,.11);color:#fff;outline:2px solid transparent}
+    .legal-document{display:grid;gap:1rem}
+    .legal-card{border:1px solid rgba(255,255,255,.12);border-radius:1.35rem;background:rgba(255,255,255,.97);color:#1b2333;padding:clamp(1.3rem,3vw,2rem);box-shadow:0 18px 45px rgba(0,0,0,.16);scroll-margin-top:110px}
+    .legal-card h2{font-size:clamp(1.35rem,2vw,1.85rem);line-height:1.25;margin:0 0 1rem;color:#071126}
+    .legal-card h3{font-size:1.05rem;margin:1.25rem 0 .55rem;color:#071126}
+    .legal-card p{line-height:1.82;margin:0 0 1rem;color:#334155}
+    .legal-card p:last-child{margin-bottom:0}
+    .legal-card ul,.legal-card ol{margin:0 0 1rem 1.15rem;padding:0;color:#334155;line-height:1.8}
+    .legal-card li{margin:.35rem 0}
+    .legal-card a{color:#005e72;font-weight:700}
+    .legal-contact-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}
+    .legal-contact-box{border:1px solid rgba(7,17,38,.12);border-radius:1rem;padding:1rem;background:#f8fafc}
+    .legal-contact-box strong{display:block;color:#071126;margin-bottom:.35rem}
+    .legal-note{border-left:4px solid var(--primary);background:#f8fafc;padding:1rem 1.1rem;border-radius:.85rem;margin-top:1rem}
+    .legal-related{margin-top:1.25rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1.25rem}
+    .legal-related h2{font-size:1.15rem;color:#fff;margin:0 0 .9rem}
+    .legal-related-links{display:flex;flex-wrap:wrap;gap:.65rem}
+    .legal-related-links a{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.55rem .85rem;color:rgba(255,255,255,.8);text-decoration:none;background:rgba(255,255,255,.04);font-weight:700}
+    .legal-related-links a:hover,.legal-related-links a:focus{color:#fff;border-color:rgba(0,229,255,.5)}
+    .legal-page .breadcrumb{margin:0;padding:1rem 0 0;background:transparent}
+    .legal-page .breadcrumb a,.legal-page .breadcrumb-item.active{color:rgba(255,255,255,.78)}
+    .legal-page .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.5)}
+    @media (max-width: 991.98px){
+      .legal-page{padding-top:94px}
+      .legal-header{padding:3rem 0 1.5rem}
+      .legal-grid{grid-template-columns:1fr}
+      .legal-toc{position:static}
+      .legal-toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .legal-contact-list{grid-template-columns:1fr}
+    }
+    @media (max-width: 575.98px){
+      .legal-shell{padding-inline:1rem}
+      .legal-toc ol{grid-template-columns:1fr}
+      .legal-card{border-radius:1rem}
+    }
+  </style>
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="128x128" href="/assets/tutor-services-logo.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -99,259 +148,206 @@
     </nav>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <span class="section-kicker">Clear Rules. Realistic Expectations. Responsible Use.</span>
+  <main class="legal-page">
+    <div class="legal-shell">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Terms &amp; Conditions</li>
+        </ol>
+      </nav>
+
+      <header class="legal-header">
+        <span class="legal-label">TutorServices Legal Document</span>
         <h1>Terms &amp; Conditions</h1>
-        <p>These Terms explain the basic rules for using the TutorServices website, submitting student enquiries, registering tutor profiles and communicating about tuition services.</p>
-        <p class="mb-0"><strong>Last updated:</strong> 26 August 2026</p>
-      </div>
-    </section>
+        <p class="legal-updated"><strong>Last Updated:</strong>&nbsp;26 August 2026</p>
+        <p class="legal-intro">These Terms explain the basic rules for using the TutorServices website, submitting student enquiries, registering tutor profiles and communicating about tuition services.</p>
+      </header>
 
-    <nav class="container" aria-label="Breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Terms &amp; Conditions</li>
-      </ol>
-    </nav>
+      <div class="legal-grid">
+        <aside class="legal-toc" aria-labelledby="terms-contents">
+          <h2 id="terms-contents">Contents</h2>
+          <ol>
+            <li><a href="#terms-summary">Summary</a></li>
+            <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+            <li><a href="#services-role">2. Nature of Services</a></li>
+            <li><a href="#user-responsibilities">3. User Responsibilities</a></li>
+            <li><a href="#tutor-registration-terms">4. Tutor Registration</a></li>
+            <li><a href="#fees-payments">5. Fees, Payments and Availability</a></li>
+            <li><a href="#student-enquiries">6. Student Enquiries and Matching</a></li>
+            <li><a href="#intellectual-property">7. Intellectual Property</a></li>
+            <li><a href="#website-content">8. Website Content</a></li>
+            <li><a href="#liability">9. Limitations and User Decisions</a></li>
+            <li><a href="#third-party-links">10. Third-Party Links &amp; Services</a></li>
+            <li><a href="#privacy-and-communication">11. Privacy and Communication</a></li>
+            <li><a href="#service-refusal">12. Suspension or Refusal of Service</a></li>
+            <li><a href="#changes">13. Changes to These Terms</a></li>
+            <li><a href="#terms-contact">14. Contact</a></li>
+          </ol>
+        </aside>
 
-    <section class="ai-answer-section section-padding" aria-labelledby="terms-quick-answer">
-      <div class="container">
-        <div class="ai-summary-box">
-          <span class="section-kicker">Quick Summary</span>
-          <h2 id="terms-quick-answer">Terms for using TutorServices</h2>
-          <p><strong>TutorServices operates as a tuition information and tutor-matching service.</strong> These Terms explain how students, parents, guardians, tutors and website visitors may use the website, submit enquiries, register tutor profiles and communicate about tuition services.</p>
-          <p class="ai-summary-line"><strong>Important:</strong> TutorServices does not guarantee tutor availability, tutor approval, student assignments, academic results, admissions, ranks, marks or uninterrupted website access. Final tuition arrangements, fees, schedules, safety expectations and payment terms should be confirmed directly before regular classes begin.</p>
-        </div>
-      </div>
-    </section>
+        <div class="legal-document">
+          <section class="legal-card" id="terms-summary" aria-labelledby="terms-summary-heading">
+            <h2 id="terms-summary-heading">Summary</h2>
+            <p><strong>TutorServices operates as a tuition information and tutor-matching service.</strong> These Terms explain how students, parents, guardians, tutors and website visitors may use the website, submit enquiries, register tutor profiles and communicate about tuition services.</p>
+            <p><strong>Important:</strong> TutorServices does not guarantee tutor availability, tutor approval, student assignments, academic results, admissions, ranks, marks or uninterrupted website access. Final tuition arrangements, fees, schedules, safety expectations and payment terms should be confirmed directly before regular classes begin.</p>
+          </section>
 
-    <section class="section-padding" aria-labelledby="acceptance">
-      <div class="container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-10">
-            <span class="section-kicker">1. Acceptance of Terms</span>
-            <h2 id="acceptance">By using TutorServices, you agree to these Terms</h2>
+          <section class="legal-card" id="acceptance" aria-labelledby="acceptance-heading">
+            <h2 id="acceptance-heading">1. Acceptance of Terms</h2>
             <p>These Terms &amp; Conditions apply when you access the TutorServices website, browse service pages, submit a student enquiry, register as a tutor, contact TutorServices or use any website feature connected with tuition services.</p>
             <p>If you do not agree with these Terms, please do not submit personal details or use the website to request or offer tuition. Parents or legal guardians should submit or supervise enquiries for minors where appropriate.</p>
             <p>These Terms should be read together with the <a href="/privacy-policy">Privacy Policy</a>, <a href="/editorial-policy">Editorial Policy</a>, <a href="/how-we-verify-tutors">Tutor Verification Process</a> and <a href="/tutor-code-of-conduct">Tutor Code of Conduct</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
-    <section class="section-padding bg-cream" aria-labelledby="services-role">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">2. Nature of Services</span>
-          <h2 id="services-role">TutorServices helps connect learners with possible tutors</h2>
-          <p>TutorServices provides information about tuition services and helps collect requirements from students, parents and tutors. The website is not a school, university, examination board or guarantee-based coaching institution.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6"><article class="course-card h-100"><i class="fa-solid fa-user-graduate"></i><h3>Student and parent enquiries</h3><p>Students and parents may request support for home tuition, online tuition, offline tuition, one-to-one tuition, group tuition, academic coaching, language learning, computer courses, hobby classes, subjects, boards, classes and competitive exam preparation.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><i class="fa-solid fa-chalkboard-user"></i><h3>Tutor registrations</h3><p>Tutors may submit profile details for review and possible matching with relevant enquiries. Registration does not create employment, partnership, agency, guaranteed approval, guaranteed assignments or guaranteed income.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><i class="fa-solid fa-people-arrows-left-right"></i><h3>Matching assistance</h3><p>Possible matches may depend on class, subject, board, location, learning mode, schedule, language preference, tutor availability and expected fees. A suggested match is not a final confirmation until both sides agree.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><i class="fa-solid fa-chart-line"></i><h3>No outcome guarantee</h3><p>TutorServices may support learning arrangements, but cannot guarantee marks, ranks, admissions, examination selection, fluency, employment outcomes or a fixed improvement timeline.</p></article></div>
-        </div>
-        <p class="mt-4">For practical service details, review <a href="/services">TutorServices offerings</a> or visit the <a href="/frequently-asked-questions">Frequently Asked Questions</a> page.</p>
-      </div>
-    </section>
+          <section class="legal-card" id="services-role" aria-labelledby="services-role-heading">
+            <h2 id="services-role-heading">2. Nature of Services</h2>
+            <p>TutorServices provides information about tuition services and helps collect requirements from students, parents and tutors. The website is not a school, university, examination board or guarantee-based coaching institution.</p>
+            <h3>Student and parent enquiries</h3>
+            <p>Students and parents may request support for home tuition, online tuition, offline tuition, one-to-one tuition, group tuition, academic coaching, language learning, computer courses, hobby classes, subjects, boards, classes and competitive exam preparation.</p>
+            <h3>Tutor registrations</h3>
+            <p>Tutors may submit profile details for review and possible matching with relevant enquiries. Registration does not create employment, partnership, agency, guaranteed approval, guaranteed assignments or guaranteed income.</p>
+            <h3>Matching assistance</h3>
+            <p>Possible matches may depend on class, subject, board, location, learning mode, schedule, language preference, tutor availability and expected fees. A suggested match is not a final confirmation until both sides agree.</p>
+            <h3>No outcome guarantee</h3>
+            <p>TutorServices may support learning arrangements, but cannot guarantee marks, ranks, admissions, examination selection, fluency, employment outcomes or a fixed improvement timeline.</p>
+            <p>For practical service details, review <a href="/services">TutorServices offerings</a> or visit the <a href="/frequently-asked-questions">Frequently Asked Questions</a> page.</p>
+          </section>
 
-    <section class="section-padding" aria-labelledby="user-responsibilities">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">3. User Responsibilities</span>
-          <h2 id="user-responsibilities">Students, parents and tutors must use the service honestly and respectfully</h2>
-          <p>All users are responsible for the accuracy of information they provide and for maintaining respectful, lawful communication.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3"><article class="feature-card h-100"><i class="fa-solid fa-circle-check"></i><h3>Provide accurate information</h3><p>Do not submit false names, qualifications, experience, requirements, locations, availability or contact details. Update important information when it changes.</p></article></div>
-          <div class="col-md-6 col-lg-3"><article class="feature-card h-100"><i class="fa-solid fa-comments"></i><h3>Communicate respectfully</h3><p>Avoid abusive, discriminatory, threatening, misleading or inappropriate communication. Keep interactions connected with the tuition enquiry or arrangement.</p></article></div>
-          <div class="col-md-6 col-lg-3"><article class="feature-card h-100"><i class="fa-solid fa-scale-balanced"></i><h3>Follow applicable rules</h3><p>Do not use the website or contact information for unlawful activity, harassment, impersonation, fraud, copyright infringement or unauthorised data collection.</p></article></div>
-          <div class="col-md-6 col-lg-3"><article class="feature-card h-100"><i class="fa-solid fa-shield-halved"></i><h3>Protect personal information</h3><p>Share only necessary information, supervise arrangements involving minors and do not publish another user's private details without appropriate permission.</p></article></div>
-        </div>
-        <div class="ai-summary-box mt-5">
-          <h3>Users should confirm these points before regular tuition begins</h3>
-          <ol class="ai-steps">
-            <li>Confirm the subject, class, board and learning goals.</li>
-            <li>Discuss qualifications, teaching approach and suitability.</li>
-            <li>Agree on location or platform, timings and session duration.</li>
-            <li>Confirm fees, payment timing and cancellation expectations.</li>
-            <li>Establish appropriate safety and guardian communication.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
+          <section class="legal-card" id="user-responsibilities" aria-labelledby="user-responsibilities-heading">
+            <h2 id="user-responsibilities-heading">3. User Responsibilities</h2>
+            <p>All users are responsible for the accuracy of information they provide and for maintaining respectful, lawful communication.</p>
+            <ul>
+              <li><strong>Provide accurate information:</strong> Do not submit false names, qualifications, experience, requirements, locations, availability or contact details. Update important information when it changes.</li>
+              <li><strong>Communicate respectfully:</strong> Avoid abusive, discriminatory, threatening, misleading or inappropriate communication. Keep interactions connected with the tuition enquiry or arrangement.</li>
+              <li><strong>Follow applicable rules:</strong> Do not use the website or contact information for unlawful activity, harassment, impersonation, fraud, copyright infringement or unauthorised data collection.</li>
+              <li><strong>Protect personal information:</strong> Share only necessary information, supervise arrangements involving minors and do not publish another user's private details without appropriate permission.</li>
+            </ul>
+            <div class="legal-note">
+              <h3>Users should confirm these points before regular tuition begins</h3>
+              <ol>
+                <li>Confirm the subject, class, board and learning goals.</li>
+                <li>Discuss qualifications, teaching approach and suitability.</li>
+                <li>Agree on location or platform, timings and session duration.</li>
+                <li>Confirm fees, payment timing and cancellation expectations.</li>
+                <li>Establish appropriate safety and guardian communication.</li>
+              </ol>
+            </div>
+          </section>
 
-    <section class="section-padding bg-cream" aria-labelledby="tutor-registration-terms">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <span class="section-kicker">4. Tutor Registration</span>
-            <h2 id="tutor-registration-terms">Submitting a profile permits consideration, not guaranteed assignments</h2>
+          <section class="legal-card" id="tutor-registration-terms" aria-labelledby="tutor-registration-heading">
+            <h2 id="tutor-registration-heading">4. Tutor Registration</h2>
             <p>Tutors should provide genuine qualifications, experience, subject expertise, boards, class levels, teaching mode, location, fee expectations, availability and resume information. TutorServices may request clarification or additional information where appropriate.</p>
             <p>Profile review is explained on the <a href="/how-we-verify-tutors">Tutor Verification Process</a> page. TutorServices does not claim universal police or identity background verification for every tutor. Profile approval does not guarantee student leads and can never substitute for the family's final assessment.</p>
             <p>Tutors are expected to follow the <a href="/tutor-code-of-conduct">Tutor Code of Conduct</a>, including professional communication, preparation, punctuality, confidentiality and appropriate boundaries with learners and families.</p>
-          </div>
-          <div class="col-lg-6">
-            <span class="section-kicker">5. Fees, Payments and Availability</span>
-            <h2>Fees must be discussed and confirmed before classes continue</h2>
+          </section>
+
+          <section class="legal-card" id="fees-payments" aria-labelledby="fees-payments-heading">
+            <h2 id="fees-payments-heading">5. Fees, Payments and Availability</h2>
             <p>The tutor form allows hourly, monthly or per-course preferences and includes the label <strong>Preferred fee (Per hour in Rupees)</strong> for hourly expectations. A submitted amount is a preference, not an automatic final agreement.</p>
             <p>Before teaching begins, tutors and families should confirm the final fee, session duration, frequency, payment method, due dates, travel expectations, missed-class arrangements and whether any demo or introductory session is free or paid. TutorServices does not publish one universal payment process for every arrangement.</p>
             <p>Any direct payment arrangement between a family and tutor should be handled carefully by the parties involved. TutorServices is not responsible for private payment disputes unless a separate written arrangement clearly states otherwise.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
-    <section class="section-padding" aria-labelledby="student-enquiries">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">6. Student Enquiries and Matching</span>
-          <h2 id="student-enquiries">Tutor matching depends on the requirement and available profiles</h2>
-          <p>A complete enquiry improves relevance but does not guarantee a match within a fixed time.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6"><article class="course-card h-100"><h3>Requirement details</h3><p>Parents and students should submit the correct class, board, subjects, city, preferred mode, timings, fee preference and learning goal. Special academic or accessibility needs should be explained appropriately without sharing unnecessary sensitive information.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><h3>Availability and location</h3><p>Home tuition depends on a tutor being available within a practical travel area. Online tuition can widen access but still depends on subject, level, language and schedule. TutorServices cannot promise coverage in every locality or for every specialised request.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><h3>Demos and introductions</h3><p>A demo or introductory session may be offered in some cases, but it is not guaranteed for every enquiry. Users should confirm the session duration, purpose and payment status in advance and use it as one part of their suitability assessment.</p></article></div>
-          <div class="col-md-6"><article class="course-card h-100"><h3>Changes or concerns</h3><p>If an introduction is unsuitable, contact TutorServices with the specific concern. Another match may be considered subject to availability, but immediate replacement is not guaranteed. Users should communicate concerns factually and protect private information.</p></article></div>
-        </div>
-      </div>
-    </section>
+          <section class="legal-card" id="student-enquiries" aria-labelledby="student-enquiries-heading">
+            <h2 id="student-enquiries-heading">6. Student Enquiries and Matching</h2>
+            <p>A complete enquiry improves relevance but does not guarantee a match within a fixed time.</p>
+            <h3>Requirement details</h3>
+            <p>Parents and students should submit the correct class, board, subjects, city, preferred mode, timings, fee preference and learning goal. Special academic or accessibility needs should be explained appropriately without sharing unnecessary sensitive information.</p>
+            <h3>Availability and location</h3>
+            <p>Home tuition depends on a tutor being available within a practical travel area. Online tuition can widen access but still depends on subject, level, language and schedule. TutorServices cannot promise coverage in every locality or for every specialised request.</p>
+            <h3>Demos and introductions</h3>
+            <p>A demo or introductory session may be offered in some cases, but it is not guaranteed for every enquiry. Users should confirm the session duration, purpose and payment status in advance and use it as one part of their suitability assessment.</p>
+            <h3>Changes or concerns</h3>
+            <p>If an introduction is unsuitable, contact TutorServices with the specific concern. Another match may be considered subject to availability, but immediate replacement is not guaranteed. Users should communicate concerns factually and protect private information.</p>
+          </section>
 
-    <section class="section-padding bg-cream" aria-labelledby="intellectual-property">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <span class="section-kicker">7. Intellectual Property</span>
-            <h2 id="intellectual-property">Website branding and original content are protected</h2>
+          <section class="legal-card" id="intellectual-property" aria-labelledby="intellectual-property-heading">
+            <h2 id="intellectual-property-heading">7. Intellectual Property</h2>
             <p>TutorServices branding, logos, original website text, page structures and original materials belong to TutorServices or are used with appropriate permission unless otherwise stated. Third-party names, icons, libraries, fonts, platforms and materials remain the property of their respective owners.</p>
             <p>Users may read and share links to public pages for personal, non-commercial purposes. They should not copy entire articles, reproduce the website design, remove attribution, claim TutorServices content as their own or use the brand in a misleading way without permission.</p>
             <p>Students and tutors remain responsible for respecting copyright in textbooks, worksheets, examination materials, recordings and digital resources used during lessons.</p>
-          </div>
-          <div class="col-lg-6">
-            <span class="section-kicker">8. Website Content and Educational Information</span>
-            <h2>Educational information is general guidance</h2>
+          </section>
+
+          <section class="legal-card" id="website-content" aria-labelledby="website-content-heading">
+            <h2 id="website-content-heading">8. Website Content and Educational Information</h2>
             <p>Articles and service pages are written to help users understand learning options. They are not official notices from a school board, examination body, university or government authority. Time-sensitive rules should be checked against current official sources.</p>
             <p>The <a href="/editorial-policy">Editorial Policy</a> explains content standards, AI assistance, corrections and updates. TutorServices may correct, update or reorganise website content as services and educational information develop.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
-    <section class="section-padding" aria-labelledby="liability">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">9. Limitations and User Decisions</span>
-          <h2 id="liability">Reasonable efforts do not remove every risk or uncertainty</h2>
-          <p>TutorServices aims to provide useful information, receive enquiries and support relevant introductions. However, tuition decisions involve personal judgement, availability and direct communication between users.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6"><article class="feature-card h-100"><i class="fa-solid fa-chart-simple"></i><h3>No academic guarantees</h3><p>TutorServices cannot guarantee marks, ranks, admissions, examination success, fluency or a specific improvement timeline.</p></article></div>
-          <div class="col-md-6"><article class="feature-card h-100"><i class="fa-solid fa-user-check"></i><h3>No universal suitability guarantee</h3><p>Profile review and matching information cannot guarantee a person's conduct, reliability or suitability for every learner.</p></article></div>
-          <div class="col-md-6"><article class="feature-card h-100"><i class="fa-solid fa-globe"></i><h3>No uninterrupted-access promise</h3><p>The website or external communication services may be temporarily unavailable because of maintenance, networks, hosting or third-party systems.</p></article></div>
-          <div class="col-md-6"><article class="feature-card h-100"><i class="fa-solid fa-handshake"></i><h3>Users confirm final arrangements</h3><p>Families and tutors are responsible for discussing fees, schedules, payment, cancellation, supervision, safety and teaching expectations before continuing.</p></article></div>
-        </div>
-        <p class="mt-4">To the maximum extent permitted by applicable law, TutorServices is not liable for indirect, incidental, special or consequential losses arising from website use, unavailable tutors, private arrangements, third-party services or academic outcomes. Nothing in these Terms excludes responsibilities that cannot legally be excluded.</p>
-      </div>
-    </section>
+          <section class="legal-card" id="liability" aria-labelledby="liability-heading">
+            <h2 id="liability-heading">9. Limitations and User Decisions</h2>
+            <p>TutorServices aims to provide useful information, receive enquiries and support relevant introductions. However, tuition decisions involve personal judgement, availability and direct communication between users.</p>
+            <ul>
+              <li><strong>No academic guarantees:</strong> TutorServices cannot guarantee marks, ranks, admissions, examination success, fluency or a specific improvement timeline.</li>
+              <li><strong>No universal suitability guarantee:</strong> Profile review and matching information cannot guarantee a person's conduct, reliability or suitability for every learner.</li>
+              <li><strong>No uninterrupted-access promise:</strong> The website or external communication services may be temporarily unavailable because of maintenance, networks, hosting or third-party systems.</li>
+              <li><strong>Users confirm final arrangements:</strong> Families and tutors are responsible for discussing fees, schedules, payment, cancellation, supervision, safety and teaching expectations before continuing.</li>
+            </ul>
+            <p>To the maximum extent permitted by applicable law, TutorServices is not liable for indirect, incidental, special or consequential losses arising from website use, unavailable tutors, private arrangements, third-party services or academic outcomes. Nothing in these Terms excludes responsibilities that cannot legally be excluded.</p>
+          </section>
 
-    <section class="section-padding bg-cream" aria-labelledby="third-party-links">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-7">
-            <span class="section-kicker">10. Third-Party Links &amp; Services</span>
-            <h2 id="third-party-links">External providers operate under their own policies</h2>
+          <section class="legal-card" id="third-party-links" aria-labelledby="third-party-links-heading">
+            <h2 id="third-party-links-heading">10. Third-Party Links &amp; Services</h2>
             <p>The website uses or links to services that may include Google Analytics, Google Fonts, Gmail, FormSubmit, WhatsApp, telephone and SMS functions, hosting providers, social platforms and other external websites. Clicking a link or sending information through an external service may transfer the interaction outside TutorServices.</p>
             <p>TutorServices does not control every aspect of third-party availability, security, content or data handling. Users should review the relevant provider's terms and privacy information before sharing information or relying on an external service.</p>
             <p>A link does not automatically mean TutorServices endorses every statement, product or policy on the destination website. External content can change without notice.</p>
-          </div>
-          <div class="col-lg-5">
-            <div class="ai-summary-box">
+            <div class="legal-note">
               <h3>Before using an external link</h3>
-              <ul class="ai-takeaways">
+              <ul>
                 <li>Check the destination address.</li>
                 <li>Review the provider's privacy settings.</li>
                 <li>Confirm the recipient before sending details.</li>
                 <li>Avoid unnecessary sensitive information.</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
-    <section class="section-padding" aria-labelledby="privacy-and-communication">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <span class="section-kicker">11. Privacy and Communication</span>
-            <h2 id="privacy-and-communication">Personal information is handled according to the Privacy Policy</h2>
+          <section class="legal-card" id="privacy-and-communication" aria-labelledby="privacy-heading">
+            <h2 id="privacy-heading">11. Privacy and Communication</h2>
             <p>Information submitted through forms, calls, email, WhatsApp or other contact methods may be used to respond to enquiries, understand learning requirements, review tutor profiles and support suitable communication. Data practices are explained in the <a href="/privacy-policy">Privacy Policy</a>.</p>
             <p>By submitting contact details, users allow TutorServices to contact them about the relevant enquiry, registration or support request. Users should not submit information that is false, unnecessary or shared without permission.</p>
-          </div>
-          <div class="col-lg-6">
-            <span class="section-kicker">12. Suspension or Refusal of Service</span>
-            <h2>TutorServices may refuse or stop assistance where necessary</h2>
+          </section>
+
+          <section class="legal-card" id="service-refusal" aria-labelledby="service-refusal-heading">
+            <h2 id="service-refusal-heading">12. Suspension or Refusal of Service</h2>
             <p>TutorServices may decline, pause or stop responding to an enquiry or tutor registration if information appears false, incomplete, inappropriate, unsafe, abusive, spam-like or inconsistent with these Terms.</p>
             <p>This may also apply where a user misuses contact information, behaves disrespectfully, misrepresents qualifications, repeatedly submits irrelevant requests or creates risk for students, parents, tutors or the platform.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
-    <section class="section-padding" aria-labelledby="changes">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">13. Changes to These Terms</span>
-          <h2 id="changes">The Terms may be updated as the website and services develop</h2>
-          <p>TutorServices may revise these Terms when website features, services, forms, communication methods or operating practices change. The revised version will be published on this page with an updated date. Continued use after publication means the current version applies to that use.</p>
-          <p>Users should review the current Terms before submitting a new enquiry or tutor profile, especially if significant time has passed since their previous visit.</p>
-        </div>
-      </div>
-    </section>
+          <section class="legal-card" id="changes" aria-labelledby="changes-heading">
+            <h2 id="changes-heading">13. Changes to These Terms</h2>
+            <p>TutorServices may revise these Terms when website features, services, forms, communication methods or operating practices change. The revised version will be published on this page with an updated date. Continued use after publication means the current version applies to that use.</p>
+            <p>Users should review the current Terms before submitting a new enquiry or tutor profile, especially if significant time has passed since their previous visit.</p>
+          </section>
 
-    <section class="section-padding bg-cream" aria-labelledby="terms-contact">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-kicker">14. Contact</span>
-          <h2 id="terms-contact">Ask TutorServices about these Terms</h2>
-          <p>If a rule or service expectation is unclear, contact TutorServices before submitting information, paying for lessons or confirming a regular schedule.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4"><article class="feature-card h-100"><i class="fa-solid fa-envelope"></i><h3>Email</h3><p><a href="mailto:tutorservices.in@gmail.com">tutorservices.in@gmail.com</a></p></article></div>
-          <div class="col-md-4"><article class="feature-card h-100"><i class="fa-solid fa-phone"></i><h3>Telephone</h3><p><a href="tel:+917011090796">+91 7011090796</a></p></article></div>
-          <div class="col-md-4"><article class="feature-card h-100"><i class="fa-solid fa-message"></i><h3>Contact form</h3><p><a href="/contact">Send a Terms-related question</a></p></article></div>
+          <section class="legal-card" id="terms-contact" aria-labelledby="terms-contact-heading">
+            <h2 id="terms-contact-heading">14. Contact</h2>
+            <p>If a rule or service expectation is unclear, contact TutorServices before submitting information, paying for lessons or confirming a regular schedule.</p>
+            <div class="legal-contact-list">
+              <div class="legal-contact-box"><strong>Email</strong><a href="mailto:tutorservices.in@gmail.com">tutorservices.in@gmail.com</a></div>
+              <div class="legal-contact-box"><strong>Telephone</strong><a href="tel:+917011090796">+91 7011090796</a></div>
+              <div class="legal-contact-box"><strong>Contact form</strong><a href="/contact">Send a Terms-related question</a></div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
 
-    <section class="cta-band">
-      <div class="container">
-        <div><span class="section-kicker">Need Clarification?</span><h2>Ask before confirming an arrangement</h2><p>Contact TutorServices if you need help understanding matching, registration, fees, communication or website use.</p></div>
-        <a class="btn btn-brand btn-lg" href="/contact">Contact TutorServices</a>
-      </div>
-    </section>
-
-    <section class="topic-cluster-section" aria-labelledby="terms-related">
-      <div class="container">
-        <div class="topic-cluster-heading"><span class="section-kicker">Related Information</span><h2 id="terms-related">Review TutorServices policies and support</h2><p>These pages provide additional information about the organisation, services, data and content standards.</p></div>
-        <div class="topic-cluster-links">
-          <a class="topic-cluster-link" href="/about"><span>About TutorServices</span><small>Learn about the founder, mission and service approach.</small></a>
-          <a class="topic-cluster-link" href="/services"><span>Explore Services</span><small>Review the learning formats described by these Terms.</small></a>
-          <a class="topic-cluster-link" href="/how-we-verify-tutors"><span>Tutor Verification Process</span><small>Understand submitted-profile review and its limitations.</small></a>
-          <a class="topic-cluster-link" href="/tutor-code-of-conduct"><span>Tutor Code of Conduct</span><small>Review professional standards for tutors using the service.</small></a>
-          <a class="topic-cluster-link" href="/privacy-policy"><span>Privacy Policy</span><small>Understand form data, analytics, communication and privacy requests.</small></a>
-          <a class="topic-cluster-link" href="/editorial-policy"><span>Editorial Policy</span><small>See how educational content is prepared, checked and updated.</small></a>
-          <a class="topic-cluster-link" href="/frequently-asked-questions"><span>Frequently Asked Questions</span><small>Read practical answers about matching, registration and fees.</small></a>
-          <a class="topic-cluster-link" href="/home-tuition"><span>Home Tuition</span><small>Review a core service governed by these website conditions.</small></a>
+      <section class="legal-related" aria-labelledby="terms-related">
+        <h2 id="terms-related">Related policies and support pages</h2>
+        <div class="legal-related-links">
+          <a href="/about">About TutorServices</a>
+          <a href="/services">Services</a>
+          <a href="/how-we-verify-tutors">Tutor Verification</a>
+          <a href="/tutor-code-of-conduct">Tutor Code of Conduct</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/editorial-policy">Editorial Policy</a>
+          <a href="/frequently-asked-questions">FAQs</a>
+          <a href="/contact">Contact</a>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
-
   <footer class="site-footer">
     <div class="container">
       <div class="row g-4">
@@ -370,3 +366,4 @@
   <script src="/script.min.js"></script>
 </body>
 </html>
+
