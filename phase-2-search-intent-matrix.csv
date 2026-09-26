@@ -1,0 +1,19 @@
+Cluster,Primary intent,Decision,Target route,Reason
+Tutor near me,tutor near me; home tutor near me; private tutor near me,Create,/tutors-near-me,"Distinct local discovery intent with mode, location and matching guidance"
+Home tuition fees,home tuition fees; home tutor cost; private tutor fees,Create,/home-tuition-fees,Distinct pricing research intent requiring transparent fee factors without invented prices
+Home tuition core,home tutor; private tutor; tuition teacher; hire a tutor,Improve,/home-tuition,Existing authoritative service page should absorb overlapping service vocabulary
+Online tutor,online tutor; online tuition; one-to-one online tutor,Keep/improve links,/online-tuition,Intent already covered by a strong dedicated page
+Gurugram location,home tutor in Gurgaon/Gurugram; home tuition in Gurugram,Create,/cities/gurugram,Major declared NCR service area with existing locality guides but no city hub
+Noida location,home tutor in Noida; home tuition in Noida,Create,/cities/noida,Major declared NCR service area with existing guides but no city hub
+Ghaziabad location,home tutor in Ghaziabad; home tuition in Ghaziabad,Create,/cities/ghaziabad,Major declared NCR service area and currently uncovered
+Faridabad location,home tutor in Faridabad; home tuition in Faridabad,Create,/cities/faridabad,Major declared NCR service area and currently uncovered
+Accountancy tuition,accountancy tutor; accounts tuition,Create,/subjects/accountancy-tuition,Distinct commerce subject intent and multiple existing internal references
+Hindi tuition,Hindi tutor; Hindi tuition,Create,/subjects/hindi-tuition,Distinct language and school subject intent with multiple existing internal references
+Computer Science tuition,computer science tutor; coding tuition,Create,/subjects/computer-science-tuition,Distinct technical subject intent with multiple existing internal references
+Economics tuition,economics tutor; economics tuition,Create,/subjects/economics-tuition,Distinct senior-secondary commerce and humanities subject intent
+Business Studies tuition,business studies tutor; commerce tuition,Create,/subjects/business-studies-tuition,Distinct case-study and board-answer intent
+Social Science tuition,social science tutor; history civics geography tuition,Create,/subjects/social-science-tuition,Distinct integrated middle and secondary school subject intent
+Coding for kids,coding classes for kids; coding tutor,Create,/subjects/coding-for-kids,Distinct skill-learning and beginner project intent
+Class-board-subject-location combinations,CBSE Class 10 Maths tutor in Delhi and variants,No standalone page,Existing hubs,Combination is covered through internal links; mass pages would be repetitive
+IGCSE/IB/NIOS,board-specific tutor searches,Keep on board hub,/boards,Current demand is covered without thin standalone pages
+Tuition teacher near me,find a tuition teacher near me,Cover in tutor hub,/tutors-near-me,Same practical task as finding a nearby tutor; separate page would overlap

@@ -1,0 +1,13 @@
+{
+  "mimeType": "image/png",
+  "provider": "openvino-genai",
+  "model": "OpenVINO/stable-diffusion-v1-5-int8-ov",
+  "device": "GPU",
+  "width": 512,
+  "height": 512,
+  "steps": 30,
+  "guidanceScale": 5.5,
+  "seed": 123,
+  "elapsedSeconds": 185.8,
+  "qualityStatus": "requires-human-review"
+}
