@@ -7,6 +7,12 @@
   const exitPopup = document.querySelector(".exit-popup");
   const exitClose = document.querySelector(".exit-close");
 
+  ["pointerdown", "keydown"].forEach((eventName) => {
+    window.addEventListener(eventName, ensureTutorservicesAnalytics, { once: true, passive: true });
+  });
+
+  document.addEventListener("click", trackLeadActionClick);
+
   document.querySelectorAll(".navbar-toggler[data-bs-target]").forEach((button) => {
     const target = document.querySelector(button.dataset.bsTarget);
     button.setAttribute("aria-expanded", "false");
@@ -127,14 +133,31 @@
   });
 
   document.querySelectorAll(".needs-validation").forEach((form) => {
+    const leadFormKind = getLeadFormKind(form);
+    if (leadFormKind) {
+      form.addEventListener("focusin", () => {
+        if (form.dataset.analyticsStarted === "true") return;
+        form.dataset.analyticsStarted = "true";
+        trackConversionEvent(`${leadFormKind}_started`, {
+          form_type: getFormType(form)
+        });
+      });
+    }
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       event.stopPropagation();
+      if (form.dataset.submissionState === "sending" || form.dataset.submissionState === "sent") {
+        showToast(form.dataset.submissionState === "sent" ? "This enquiry has already been sent." : "Your enquiry is being sent.");
+        return;
+      }
       form.classList.add("was-validated");
       if (form.checkValidity()) {
         const submitButton = form.querySelector('[type="submit"]');
         const originalButtonText = submitButton?.textContent;
         const inquiryPackage = createInquiryPackage(form);
+
+        form.dataset.submissionState = "sending";
 
         if (submitButton) {
           submitButton.disabled = true;
@@ -143,19 +166,27 @@
 
         try {
           await sendInquiryAutomatically(inquiryPackage);
+          form.dataset.submissionState = "sent";
+          if (leadFormKind) {
+            trackConversionEvent(`${leadFormKind}_submitted`, {
+              form_type: getFormType(form)
+            });
+          }
           showInquiryResultPanel(inquiryPackage, true);
           maybeOpenSmsComposer(inquiryPackage);
           form.reset();
           form.classList.remove("was-validated");
           showToast("Enquiry sent. SMS draft opens on mobile.");
         } catch (error) {
+          form.dataset.submissionState = "idle";
           showInquiryResultPanel(inquiryPackage, false);
           maybeOpenSmsComposer(inquiryPackage);
           showToast("Automatic sending failed. Please use Gmail or SMS backup.");
         } finally {
           if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
+            const wasSent = form.dataset.submissionState === "sent";
+            submitButton.disabled = wasSent;
+            submitButton.textContent = wasSent ? "Enquiry Sent" : originalButtonText;
           }
         }
       }
@@ -217,6 +248,75 @@
     });
   });
 });
+
+const TUTORSERVICES_GA4_ID = "G-KNFJRWMJHZ";
+
+function ensureTutorservicesAnalytics() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  if (window.tutorservicesAnalyticsLoaded) return;
+  if (typeof window.loadTutorservicesAnalytics === "function") {
+    window.loadTutorservicesAnalytics();
+    return;
+  }
+
+  window.tutorservicesAnalyticsLoaded = true;
+  const tag = document.createElement("script");
+  tag.async = true;
+  tag.src = `https://www.googletagmanager.com/gtag/js?id=${TUTORSERVICES_GA4_ID}`;
+  document.head.appendChild(tag);
+  window.gtag("js", new Date());
+  window.gtag("config", TUTORSERVICES_GA4_ID);
+}
+
+function trackConversionEvent(eventName, parameters = {}) {
+  ensureTutorservicesAnalytics();
+  window.gtag("event", eventName, {
+    page_path: window.location.pathname,
+    transport_type: "beacon",
+    ...parameters
+  });
+}
+
+function getFormType(form) {
+  return (form.dataset.inquiryType || "website_enquiry")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+}
+
+function getLeadFormKind(form) {
+  const inquiryType = (form.dataset.inquiryType || "").toLowerCase();
+  if (inquiryType.includes("contact page")) return "contact_form";
+  if (/homepage|floating|free demo|student registration/.test(inquiryType)) return "tutor_request";
+  return "";
+}
+
+function trackLeadActionClick(event) {
+  const link = event.target.closest("a, button");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+  const label = (link.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+  const commonParameters = {
+    cta_location: link.closest("header") ? "header" : link.closest("footer") ? "footer" : link.closest(".modal") ? "modal" : "page"
+  };
+
+  if (/wa\.me\//i.test(href)) {
+    trackConversionEvent("whatsapp_clicked", commonParameters);
+  } else if (href.toLowerCase().startsWith("tel:")) {
+    trackConversionEvent("phone_clicked", commonParameters);
+  } else if (href.toLowerCase().startsWith("mailto:")) {
+    trackConversionEvent("email_clicked", commonParameters);
+  }
+
+  if (link.matches("[data-demo-open]") || /book (free )?demo|request demo/.test(label)) {
+    trackConversionEvent("book_free_demo_clicked", commonParameters);
+  }
+}
 
 function showToast(message) {
   const toast = document.createElement("div");
