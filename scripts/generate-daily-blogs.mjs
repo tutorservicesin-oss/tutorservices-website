@@ -498,6 +498,286 @@ const topicPool = [
     slug: "choose-tuition-mode-home-online-group",
     category: "Tuition Guide",
     intent: "Comparison guide"
+  },
+  {
+    topic: "How to Choose a Maths Tutor for Class 6 to 8",
+    primaryKeyword: "Maths Tutor for Class 6 to 8",
+    slug: "maths-tutor-class-6-to-8-parent-guide",
+    category: "Maths Tuition",
+    intent: "Commercial parent guide"
+  },
+  {
+    topic: "Class 10 Science Revision Plan with a Private Tutor",
+    primaryKeyword: "Class 10 Science Revision",
+    slug: "class-10-science-revision-private-tutor-plan",
+    category: "Science Tuition",
+    intent: "Exam revision guide"
+  },
+  {
+    topic: "How English Tuition Improves Writing Skills for Students",
+    primaryKeyword: "English Tuition for Writing Skills",
+    slug: "english-tuition-writing-skills-students",
+    category: "English Tuition",
+    intent: "Subject support guide"
+  },
+  {
+    topic: "Physics Numericals Practice Plan for Class 11 Students",
+    primaryKeyword: "Physics Numericals Practice",
+    slug: "physics-numericals-practice-class-11-students",
+    category: "Physics Tuition",
+    intent: "Subject practice guide"
+  },
+  {
+    topic: "Chemistry Formula Revision Guide for Board Students",
+    primaryKeyword: "Chemistry Formula Revision",
+    slug: "chemistry-formula-revision-board-students",
+    category: "Chemistry Tuition",
+    intent: "Exam revision guide"
+  },
+  {
+    topic: "Biology Diagram Practice Tips for Class 10 and 12",
+    primaryKeyword: "Biology Diagram Practice",
+    slug: "biology-diagram-practice-class-10-12",
+    category: "Biology Tuition",
+    intent: "Subject practice guide"
+  },
+  {
+    topic: "How CBSE Students Can Use NCERT More Effectively",
+    primaryKeyword: "NCERT Study Plan",
+    slug: "ncert-study-plan-for-cbse-students",
+    category: "CBSE Tuition",
+    intent: "Board study guide"
+  },
+  {
+    topic: "ICSE English Preparation Tips for School Students",
+    primaryKeyword: "ICSE English Preparation",
+    slug: "icse-english-preparation-school-students",
+    category: "ICSE Tuition",
+    intent: "Board subject guide"
+  },
+  {
+    topic: "State Board Exam Preparation with Personalized Tuition",
+    primaryKeyword: "State Board Exam Preparation",
+    slug: "state-board-exam-preparation-personalized-tuition",
+    category: "State Board Tuition",
+    intent: "Board exam guide"
+  },
+  {
+    topic: "Primary School Tuition: How to Build Reading Habits",
+    primaryKeyword: "Primary School Tuition",
+    slug: "primary-school-tuition-reading-habits",
+    category: "Primary Tuition",
+    intent: "Parent guide"
+  },
+  {
+    topic: "Class 8 Tuition: Preparing Students for Class 9",
+    primaryKeyword: "Class 8 Tuition",
+    slug: "class-8-tuition-preparing-for-class-9",
+    category: "Middle School Tuition",
+    intent: "Class transition guide"
+  },
+  {
+    topic: "Class 9 Tuition Plan for Maths, Science and English",
+    primaryKeyword: "Class 9 Tuition Plan",
+    slug: "class-9-tuition-plan-maths-science-english",
+    category: "Class 9 Tuition",
+    intent: "Class support guide"
+  },
+  {
+    topic: "Class 11 Science Tuition: How to Avoid Backlogs",
+    primaryKeyword: "Class 11 Science Tuition",
+    slug: "class-11-science-tuition-avoid-backlogs",
+    category: "Class 11 Tuition",
+    intent: "Senior secondary guide"
+  },
+  {
+    topic: "Class 12 Commerce Tuition for Accounts and Economics",
+    primaryKeyword: "Class 12 Commerce Tuition",
+    slug: "class-12-commerce-tuition-accounts-economics",
+    category: "Commerce Tuition",
+    intent: "Senior secondary guide"
+  },
+  {
+    topic: "How Home Tuition Supports Students After School",
+    primaryKeyword: "After School Home Tuition",
+    slug: "after-school-home-tuition-support-students",
+    category: "Home Tuition",
+    intent: "Service benefit guide"
+  },
+  {
+    topic: "Online Tuition for Students in Small Towns",
+    primaryKeyword: "Online Tuition for Small Town Students",
+    slug: "online-tuition-small-town-students",
+    category: "Online Tuition",
+    intent: "Service guide"
+  },
+  {
+    topic: "Offline Tuition Classes: When Classroom Learning Helps",
+    primaryKeyword: "Offline Tuition Classes",
+    slug: "offline-tuition-classes-classroom-learning-guide",
+    category: "Offline Tuition",
+    intent: "Service guide"
+  },
+  {
+    topic: "One-to-One Tuition for Slow Learners: Parent Guide",
+    primaryKeyword: "One-to-One Tuition for Slow Learners",
+    slug: "one-to-one-tuition-slow-learners-parent-guide",
+    category: "One-to-One Tuition",
+    intent: "Parent guide"
+  },
+  {
+    topic: "Group Tuition for Students Who Learn Better with Peers",
+    primaryKeyword: "Group Tuition for Students",
+    slug: "group-tuition-students-peer-learning",
+    category: "Group Tuition",
+    intent: "Service guide"
+  },
+  {
+    topic: "Academic Coaching for Better Study Planning",
+    primaryKeyword: "Academic Coaching for Study Planning",
+    slug: "academic-coaching-better-study-planning",
+    category: "Academic Coaching",
+    intent: "Study skills guide"
+  },
+  {
+    topic: "Computer Courses for School Students and Beginners",
+    primaryKeyword: "Computer Courses for Students",
+    slug: "computer-courses-school-students-beginners",
+    category: "Computer Courses",
+    intent: "Commercial course guide"
+  },
+  {
+    topic: "Hobby Classes for Children: Balancing Creativity and Studies",
+    primaryKeyword: "Hobby Classes for Children",
+    slug: "hobby-classes-children-creativity-studies",
+    category: "Hobby Classes",
+    intent: "Parent guide"
+  },
+  {
+    topic: "Spoken English Practice Routine for Beginners",
+    primaryKeyword: "Spoken English Practice",
+    slug: "spoken-english-practice-routine-beginners",
+    category: "Language Classes",
+    intent: "Language practice guide"
+  },
+  {
+    topic: "English Grammar Mistakes Students Should Fix Early",
+    primaryKeyword: "English Grammar Mistakes",
+    slug: "english-grammar-mistakes-students-fix-early",
+    category: "English Grammar",
+    intent: "Language learning guide"
+  },
+  {
+    topic: "JEE Foundation Preparation Without Ignoring School Studies",
+    primaryKeyword: "JEE Foundation Preparation",
+    slug: "jee-foundation-preparation-school-study-balance",
+    category: "Competitive Exams",
+    intent: "Foundation exam guide"
+  },
+  {
+    topic: "NEET Foundation Biology Study Plan for School Students",
+    primaryKeyword: "NEET Foundation Biology",
+    slug: "neet-foundation-biology-study-plan-school-students",
+    category: "Competitive Exams",
+    intent: "Foundation exam guide"
+  },
+  {
+    topic: "CUET English Preparation for Class 12 Students",
+    primaryKeyword: "CUET English Preparation",
+    slug: "cuet-english-preparation-class-12-students",
+    category: "Competitive Exams",
+    intent: "Exam preparation guide"
+  },
+  {
+    topic: "Math Olympiad Preparation Tips for School Students",
+    primaryKeyword: "Math Olympiad Preparation",
+    slug: "math-olympiad-preparation-school-students",
+    category: "Olympiad Preparation",
+    intent: "Exam preparation guide"
+  },
+  {
+    topic: "How Parents Can Discuss Tuition Fees Clearly",
+    primaryKeyword: "Tuition Fees Discussion",
+    slug: "tuition-fees-discussion-parent-guide",
+    category: "Tuition Fees",
+    intent: "Commercial pricing guide"
+  },
+  {
+    topic: "Affordable Home Tuition: What Parents Should Understand",
+    primaryKeyword: "Affordable Home Tuition",
+    slug: "affordable-home-tuition-parent-guide",
+    category: "Home Tuition",
+    intent: "Commercial pricing guide"
+  },
+  {
+    topic: "How to Prepare for a Demo Class with a New Tutor",
+    primaryKeyword: "Demo Class Preparation",
+    slug: "demo-class-preparation-new-tutor",
+    category: "Parent Guide",
+    intent: "Decision guide"
+  },
+  {
+    topic: "Tutor Matching Checklist for Parents",
+    primaryKeyword: "Tutor Matching Checklist",
+    slug: "tutor-matching-checklist-for-parents",
+    category: "Parent Guide",
+    intent: "Trust guide"
+  },
+  {
+    topic: "How Verified Tutors Build Parent Confidence",
+    primaryKeyword: "Verified Tutors",
+    slug: "verified-tutors-build-parent-confidence",
+    category: "Trust",
+    intent: "EEAT trust guide"
+  },
+  {
+    topic: "Home Tuition in Delhi NCR: What Families Should Know",
+    primaryKeyword: "Home Tuition in Delhi NCR",
+    slug: "home-tuition-delhi-ncr-family-guide",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Online Tuition Across India for Board Exam Students",
+    primaryKeyword: "Online Tuition Across India",
+    slug: "online-tuition-across-india-board-exam-students",
+    category: "Online Tuition",
+    intent: "Service guide"
+  },
+  {
+    topic: "Home Tutor in South Delhi: How to Choose by Subject",
+    primaryKeyword: "Home Tutor in South Delhi",
+    slug: "home-tutor-south-delhi-choose-by-subject",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Home Tutor in Dwarka for School Students",
+    primaryKeyword: "Home Tutor in Dwarka",
+    slug: "home-tutor-dwarka-school-students",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Home Tutor in Rohini: Parent Selection Guide",
+    primaryKeyword: "Home Tutor in Rohini",
+    slug: "home-tutor-rohini-parent-selection-guide",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "Private Tutor in Central Delhi for Classes 9 to 12",
+    primaryKeyword: "Private Tutor in Central Delhi",
+    slug: "private-tutor-central-delhi-classes-9-to-12",
+    category: "Local Tuition",
+    intent: "Local commercial guide"
+  },
+  {
+    topic: "How to Improve Exam Confidence with Regular Tuition",
+    primaryKeyword: "Exam Confidence with Tuition",
+    slug: "exam-confidence-with-regular-tuition",
+    category: "Exam Preparation",
+    intent: "Study skills guide"
   }
 ];
 

@@ -2,3 +2,10 @@
 .env
 node_modules/
 .automation-logs/
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+models/
+local-ai-test-output*.png
