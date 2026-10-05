@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://www.tutorservices.in/blog</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -520,6 +520,18 @@
   <url>
     <loc>https://www.tutorservices.in/exam-confidence-with-regular-tuition</loc>
     <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/tuition-fees-discussion-parent-guide</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tutorservices.in/home-tutor-south-delhi-choose-by-subject</loc>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
