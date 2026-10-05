@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const projectRoot = __dirname;
-const excludedFiles = new Set(['google4e98645dcf787467.html']);
+const excludedFiles = new Set(['google4e98645dcf787467.html', 'how-to-find-home-tutor-near-me-safely.html', 'online-tuition-across-india-student-guide.html']);
 const mainPages = [
   'index.html',
   'about.html',

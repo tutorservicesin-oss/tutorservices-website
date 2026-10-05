@@ -3,7 +3,7 @@ const path = require('path');
 const { clusters } = require('./topic-cluster-data');
 
 const root = __dirname;
-const excludedFiles = new Set(['google4e98645dcf787467.html']);
+const excludedFiles = new Set(['google4e98645dcf787467.html', 'how-to-find-home-tutor-near-me-safely.html', 'online-tuition-across-india-student-guide.html']);
 function findHtmlFiles(directory, relativeDirectory = '') {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const relativePath = path.join(relativeDirectory, entry.name);

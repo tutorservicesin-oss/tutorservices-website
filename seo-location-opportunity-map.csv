@@ -1,0 +1,11 @@
+location,current_route,decision,reason
+Delhi,/cities/delhi,Keep and strengthen,Primary supported home-tuition market with locality pages
+South Delhi,/cities/delhi/south-delhi-home-tuition,Keep,Dedicated useful locality coverage
+Dwarka,/cities/delhi/dwarka-home-tuition,Keep,Dedicated sector-based locality coverage
+Rohini,/cities/delhi/rohini-home-tuition,Keep,Dedicated sector-based locality coverage
+Connaught Place,/cities/delhi/connaught-place-home-tuition,Keep,Central Delhi intent with nearby-area context
+Gurugram,/cities/gurugram,Keep,Supported NCR city hub with local guidance
+Noida,/cities/noida,Keep,Supported NCR city hub with sector guidance
+Ghaziabad,/cities/ghaziabad,Keep,Supported NCR city hub subject to tutor availability
+Faridabad,/cities/faridabad,Keep,Supported NCR city hub subject to tutor availability
+Additional Indian cities,,Do not create yet,Use nationwide online tuition page until genuine service evidence and unique local information exist
